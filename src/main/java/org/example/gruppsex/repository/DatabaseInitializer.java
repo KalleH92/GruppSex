@@ -19,7 +19,7 @@ public class DatabaseInitializer {
         ADMIN.setPassword("pass");
         ADMIN.setFirstName("Per");
         ADMIN.setLastName("Persson");
-        ADMIN.setAge(45);
+        ADMIN.setAge("45");
         ADMIN.setRole("ADMIN");
 
         userRepository.save(ADMIN);
