@@ -4,7 +4,6 @@ package org.example.gruppsex.service;
 import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
-import org.example.gruppsex.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -36,7 +35,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public MyUser registerUser(UserDTO userDTO) {
         MyUser user = new MyUser();
-        user.setUsername(userDTO.getEmail());
+        user.setUsername(userDTO.getUsername());
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
@@ -61,7 +60,7 @@ public class UserServiceImpl implements UserService {
         Optional<MyUser> optionalUser = userRepository.findById(id);
         if (optionalUser.isPresent()) {
             MyUser user = optionalUser.get();
-            user.setUsername(userDTO.getEmail());
+            user.setUsername(userDTO.getUsername());
             if (userDTO.getPassword() != null && !userDTO.getPassword().isEmpty()) {
                 user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
             }

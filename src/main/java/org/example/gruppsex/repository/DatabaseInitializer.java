@@ -15,7 +15,7 @@ public class DatabaseInitializer {
     public void init() {
 
         MyUser ADMIN = new MyUser();
-        ADMIN.setUsername("ad");
+        ADMIN.setUsername("admin@admin.com");
         ADMIN.setPassword("pass");
         ADMIN.setFirstName("Per");
         ADMIN.setLastName("Persson");

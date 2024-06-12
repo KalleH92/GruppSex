@@ -41,8 +41,8 @@
     <form action="#" th:action="@{/register}" method="post" th:object="${user}">
 
         <label>Full email: </label>
-        <input type="text" th:field="*{email}" /><br/>
-        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Full email error</span>
+        <input type="text" th:field="*{username}" /><br/>
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Full email error</span>
 
         <br/>
 

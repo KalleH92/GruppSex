@@ -7,7 +7,6 @@ import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.example.gruppsex.service.Maskning;
 import org.example.gruppsex.service.UserService;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +46,7 @@ public class SomethingElseController {
 
             MyUser user = new MyUser();
 
-            user.setUsername(Maskning.maskEmail(userDTO.getEmail()));
+            user.setUsername(Maskning.maskEmail(userDTO.getUsername()));
             user.setPassword(encoder.encode(userDTO.getPassword()));
             user.setFirstName(userDTO.getFirstName());
             user.setLastName(userDTO.getLastName());
@@ -78,18 +77,29 @@ public class SomethingElseController {
         return "user";
     }
 
-    @PostMapping("/update/{id}")
-    public String updateUser (@PathVariable Long id, @Valid MyUser user, BindingResult result, Model model) {
+    @PostMapping("/list/{id}")
+    public String updateUser ( @PathVariable Long id, @Valid @ModelAttribute("user") UserDTO user, BindingResult result, Model model, MyUser myUser) {
 
         if (result.hasErrors()) {
-            return "update_user";
-        }
+            return "user";
+        } else {
 
-        userRepository.save(user);
+//        user.setAge(user.getAge());
+//        user.setRole(user.getRole());
+//        user.setUsername(user.getUsername());
+//        user.setFirstName(user.getFirstName());
+//        user.setLastName(user.getLastName());
+
+
+        //userRepository.save(user);
+        userService.updateUser(id, user);
+
+        user.setId(myUser.getId());
 
         model.addAttribute("user", user);
 
-        return "user";
+        return "updateSuccess";
+        }
 
     }
 

@@ -3,17 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+        span {
+            color: #001aff;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
     <h1 th:text="${user.username}"></h1>
 
     <form action="#"
-          th:action="@{/update/{id}(id=${user.id})}"
+          th:action="@{/list/{id}(id=${user.id})}"
           th:object="${user}"
           method="post">
 
-        <label for="name">First Name</label>
+        <div hidden><label for="name">First Name</label>
         <input type="text" th:field="*{firstName}" id="name" placeholder="First Name">
         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
         <br/><br/>
@@ -28,19 +58,20 @@
         <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
         <br/><br/>
 
-        <label for="email">Username</label>
-        <input type="text" th:field="*{username}" id="email" placeholder="Username">
+        <label for="username">Username</label>
+        <input type="text" th:field="*{username}" id="username" placeholder="Username">
         <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
         <br/><br/>
 
         <label for="name">Role</label>
         <input type="text" th:field="*{role}" id="role" placeholder="role">
         <span th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></span>
-        <br/><br/>
+        <br/><br/></div>
 
-        <label for="name">Password</label>
-        <input type="text" th:field="*{password}" id="password" placeholder="password">
-        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+
+        <label for="password">Password: </label>
+        <input type="password" th:field="*{password}" id="password" placeholder="password">
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name error</span>
         <br/><br/>
 
 
