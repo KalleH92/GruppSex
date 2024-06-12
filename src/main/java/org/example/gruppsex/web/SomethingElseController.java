@@ -103,4 +103,16 @@ public class SomethingElseController {
 
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteUser (@PathVariable("id") Long id, Model model) {
+
+        MyUser user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));
+
+        userRepository.delete(user);
+
+        model.addAttribute("user", user);
+
+        return "userDeleted";
+    }
+
 }

@@ -38,6 +38,13 @@
 
     <h1 th:text="${user.username}"></h1>
 
+    <div>
+        <p>Role: </p> <p th:text="${user.role}"></p>
+        <p>Age: </p><p th:text="${user.age}"></p>
+        <p>First name: </p><p th:text="${user.firstName}"></p>
+        <p>Last name: </p><p th:text="${user.lastName}"></p>
+    </div>
+
     <form action="#"
           th:action="@{/list/{id}(id=${user.id})}"
           th:object="${user}"

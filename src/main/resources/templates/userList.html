@@ -11,10 +11,13 @@
 
         <li th:each="singleuser: ${users}">
 
-            <a th:href="@{'/list/' + ${singleuser.id}}">
+           <!-- <a th:href="@{'/list/' + ${singleuser.id}}"></a>-->
                 <span>Id: </span><span th:text="${singleuser.id}" ></span><br/>
                 <span>Username: </span><span th:text="${singleuser.username}" ></span>
-            </a>
+
+
+            <a th:href="@{'/list/' + ${singleuser.id}}"><button>Update password</button></a>
+            <a th:href="@{'/delete/' + ${singleuser.id}}"><button>Delete user</button></a>
 
         </li>
 
