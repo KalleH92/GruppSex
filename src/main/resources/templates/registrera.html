@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Registration Page</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+        span {
+            color: #001aff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+<h1>Registration page</h1>
+
+
+    <form action="#" th:action="@{/register}" method="post" th:object="${user}">
+
+        <label>Full email: </label>
+        <input type="text" th:field="*{email}" /><br/>
+        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Full email error</span>
+
+        <br/>
+
+        <br/>
+
+        <label>Full Password: </label>
+        <input type="password" th:field="*{password}" /><br/>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name error</span>
+
+        <br/>
+
+        <br/>
+
+        <label>Full Name: </label>
+        <input type="text" th:field="*{firstName}" /><br/>
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Full name error</span>
+
+        <br/>
+
+        <br/>
+
+        <label>Full Last name: </label>
+        <input type="text" th:field="*{lastName}" /><br/>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Full name error</span>
+
+        <br/>
+
+        <br/>
+
+        <label>Full age: </label>
+        <input type="text" th:field="*{age}" /><br/>
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Full name error</span>
+
+        <br/>
+
+        <br/>
+        <br/>
+
+        <button type="submit" >Registrera</button>
+
+
+    </form>
+
+</div>
+
+</body>
+</html>

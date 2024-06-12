@@ -1,37 +1,30 @@
 package org.example.gruppsex.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
-@Entity(name="UserData")
-public class MyUser {
+public class UserDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String username;
+    @NotBlank (message = "Ange en epost adress")
+    @Email(message = "Ange giltig epost adress")
+    private String email;
+
+    @NotBlank (message = "")
+    @Size(min = 4, max = 8, message = "Lösenord måste vara mellan 4-8 bokstäver")
     private String password;
+
     private String firstName;
     private String lastName;
     private String age;
     private String role;
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getEmail() {
+        return email;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
