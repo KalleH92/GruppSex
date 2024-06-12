@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UpdateUser</title>
+</head>
+<body>
+    <h1>List of users</h1>
+
+    <ul>
+
+        <li th:each="singleuser: ${users}">
+
+            <a th:href="@{'/list/' + ${singleuser.id}}">
+                <span>Id: </span><span th:text="${singleuser.id}" ></span><br/>
+                <span>Username: </span><span th:text="${singleuser.username}" ></span>
+            </a>
+
+        </li>
+
+    </ul>
+</body>
+</html>

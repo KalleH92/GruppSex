@@ -24,11 +24,11 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<MyUser> getUserById(@PathVariable Long id) {
-        Optional<MyUser> user = userService.getUserById(id);
-        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<MyUser> getUserById(@PathVariable Long id) {
+//        Optional<MyUser> user = userService.getUserById(id);
+//        return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+//    }
 
     @PostMapping
     public ResponseEntity<MyUser> createUser(@RequestBody UserDTO userDTO) {
