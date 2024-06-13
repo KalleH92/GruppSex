@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Registration Page</title>
+    <title>Registration information</title>
     <style type="text/css">
         label {
             display: inline-block;
@@ -56,7 +56,7 @@
 
         <br/>
 
-        <label>Full Name: </label>
+        <label>First name: </label>
         <input type="text" th:field="*{firstName}" /><br/>
         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Full name error</span>
 
