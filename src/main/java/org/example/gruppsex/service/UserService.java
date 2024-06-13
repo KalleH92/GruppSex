@@ -2,6 +2,7 @@ package org.example.gruppsex.service;
 
 import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UserDTO;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 import java.util.Optional;

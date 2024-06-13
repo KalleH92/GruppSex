@@ -7,14 +7,12 @@ import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.example.gruppsex.service.Maskning;
 import org.example.gruppsex.service.UserService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class SomethingElseController {
@@ -46,7 +44,7 @@ public class SomethingElseController {
 
             MyUser user = new MyUser();
 
-            user.setUsername(Maskning.maskEmail(userDTO.getUsername()));
+            user.setUsername(userDTO.getUsername());
             user.setPassword(encoder.encode(userDTO.getPassword()));
             user.setFirstName(userDTO.getFirstName());
             user.setLastName(userDTO.getLastName());
@@ -108,11 +106,32 @@ public class SomethingElseController {
 
         MyUser user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));
 
-        userRepository.delete(user);
+        if (user != null) {
+            userRepository.delete(user);
 
-        model.addAttribute("user", user);
+            model.addAttribute("user", user);
 
-        return "userDeleted";
+            return "userDeleted";
+
+        } else {
+
+            return "userNotFound";
+        }
     }
+
+    @GetMapping("/login")
+    public String login () {
+        return "login";
+    }
+
+//    @PostMapping("/login")
+//    public String loginUser(@ModelAttribute("user") @RequestBody UserDTO userDTO) {
+//        MyUser user = userService.loginUser(userDTO.getUsername(), userDTO.getPassword());
+//        if (user != null) {
+//            return "registrera";
+//        } else {
+//            return "list"; // Unauthorized
+//        }
+//    }
 
 }

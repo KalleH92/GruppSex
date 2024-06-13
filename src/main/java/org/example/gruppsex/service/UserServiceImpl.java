@@ -5,11 +5,16 @@ import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -22,10 +27,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public MyUser loginUser(String username, String rawPassword) {
+
         Optional<MyUser> userOptional = userRepository.findByUsername(username);
+
         if (userOptional.isPresent()) {
             MyUser user = userOptional.get();
             if (passwordEncoder.matches(rawPassword, user.getPassword())) {
+                System.out.println("user logged in");
                 return user;
             }
         }
@@ -41,17 +49,20 @@ public class UserServiceImpl implements UserService {
         user.setLastName(userDTO.getLastName());
         user.setAge(userDTO.getAge());
         user.setRole(userDTO.getRole());
+        System.out.println("user registered");
         return userRepository.save(user);
     }
 
     @Override
     public List<MyUser> getAllUsers() {
+        System.out.println("got All users");
         return userRepository.findAll();
     }
 
     @Override
     public MyUser getUserById(Long id) {
         Optional<MyUser> user = userRepository.findById(id);
+        System.out.println("user with id found: " + id);
         return user.orElseThrow(() ->new RuntimeException("User not found with id: " + id));
     }
 
@@ -68,6 +79,7 @@ public class UserServiceImpl implements UserService {
             user.setLastName(userDTO.getLastName());
             user.setAge(userDTO.getAge());
             user.setRole(userDTO.getRole());
+            System.out.println("password updated");
             return Optional.of(userRepository.save(user));
         }
         return Optional.empty();
@@ -77,8 +89,10 @@ public class UserServiceImpl implements UserService {
     public boolean deleteUser(Long id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
+            System.out.println("user with id deleted: " + id);
             return true;
         }
         return false;
     }
+
 }
