@@ -18,7 +18,7 @@
 
             <div sec:authorize="hasRole('ADMIN')">
                 <a th:href="@{'/list/' + ${singleuser.id}}"><button>Update password</button></a>
-                <a th:href="@{'/delete/' + ${singleuser.id}}"><button>Delete user</button></a>
+                <div hidden><a th:href="@{'/delete/' + ${singleuser.id}}"><button>Delete user</button></a></div>
             </div>
         </li>
 

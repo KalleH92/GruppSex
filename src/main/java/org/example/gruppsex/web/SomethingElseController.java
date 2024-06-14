@@ -108,28 +108,28 @@ public class SomethingElseController {
 
     }
 
-    @GetMapping("/delete/{id}")
-    public String deleteUser (@PathVariable("id") Long id, Model model) {
-
-        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
-
-
-        if (user == true) {
-
-            MyUser user2 = userRepository.findById(id).get();
-
-            userRepository.delete(user2);
-
-            model.addAttribute("user", user2);
-
-            return "userDeleted";
-
-        } else {
-
-            model.addAttribute("id", id);
-            return "userNotFound";
-        }
-    }
+//    @GetMapping("/delete/{id}")
+//    public String deleteUser (@PathVariable("id") Long id, Model model) {
+//
+//        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
+//
+//
+//        if (user == true) {
+//
+//            MyUser user2 = userRepository.findById(id).get();
+//
+//            userRepository.delete(user2);
+//
+//            model.addAttribute("user", user2);
+//
+//            return "userDeleted";
+//
+//        } else {
+//
+//            model.addAttribute("id", id);
+//            return "userNotFound";
+//        }
+//    }
 
     @GetMapping("/login")
     public String login () {
@@ -165,22 +165,33 @@ public class SomethingElseController {
     }
 
     @PostMapping("/deleteuser")
-    public String deleteUser (@ModelAttribute("user") UserDTO user) {
+    public String deleteUser (@ModelAttribute("user") UserDTO user, Model model) {
 
-        MyUser user1 = userRepository.findByUsername(user.getUsername()).get();
 
-        if(user1.getRole() != "ADMIN") {
+        boolean user0 = userRepository.findByUsername(user.getUsername()).isPresent();
 
-            System.out.println("user.getRole: " );
-            userRepository.delete(user1);
+        if (user0 != false) {
 
-            return "userDeleted";
+            MyUser user1 = userRepository.findByUsername(HtmlUtils.htmlEscape(user.getUsername())).get();
+
+            if(user1.getRole() != "ADMIN") {
+
+                System.out.println("user.getRole: " );
+                userRepository.delete(user1);
+
+                return "userDeleted";
+
+            } else {
+
+                return "adminCantBeDeleted";
+            }
 
         } else {
 
-            return "adminCantBeDeleted";
-
+            model.addAttribute("id", user.getUsername());
+            return "userNotFound";
         }
+
     }
 
 //    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
