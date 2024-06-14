@@ -1,6 +1,8 @@
 package org.example.gruppsex.web;
 
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UserDTO;
@@ -8,7 +10,11 @@ import org.example.gruppsex.repository.UserRepository;
 import org.example.gruppsex.service.Maskning;
 import org.example.gruppsex.service.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -121,9 +127,42 @@ public class SomethingElseController {
 
     @GetMapping("/login")
     public String login () {
+
         return "login";
     }
 
+    @GetMapping("/loginsuccess")
+    public String loggedInSuccessfully (Model model) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        User user = (User) authentication.getPrincipal();
+
+        MyUser user2 = userRepository.findByUsername(user.getUsername()).get();
+
+        model.addAttribute("user", user2);
+
+        return "loginSuccess";
+    }
+
+    @GetMapping("/error")
+    public String showError () {
+        return "error";
+    }
+
+//    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
+//
+//    @GetMapping("/logout")
+//    public String logout () {
+//        return "logout";
+//    }
+//
+//    @PostMapping("/logout")
+//    public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
+//        // .. perform logout
+//        this.logoutHandler.logout(request,response,authentication);
+//        return "redirect:/logout";
+//    }
 //    @PostMapping("/login")
 //    public String loginUser(@ModelAttribute("user") @RequestBody UserDTO userDTO) {
 //        MyUser user = userService.loginUser(userDTO.getUsername(), userDTO.getPassword());

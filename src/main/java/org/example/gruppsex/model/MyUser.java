@@ -12,11 +12,11 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Accessors(chain = true)
-@Getter
-@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Accessors(chain = true)
+//@Getter
+//@Setter
 @Entity(name="UserData")
 public class MyUser implements Serializable {
 

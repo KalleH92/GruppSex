@@ -40,7 +40,7 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/h2-console/**", "/register", "/update/**", /*"/list/**",*/ "/update/**", "/delete/**");
+        return (web) -> web.ignoring().requestMatchers("/h2-console/**", /*"/register",*/ "/update/**", /*"/list/**",*/ "/update/**", "/delete/**");
     }
 
     @Bean
@@ -76,17 +76,20 @@ public class SecurityConfig {
                         authorizeRequest -> authorizeRequest.requestMatchers("/admin")
                                 .hasRole("ADMIN").requestMatchers("/")
                                 .permitAll()
-                                .requestMatchers("/register")
-                                .permitAll()
+                                .requestMatchers("/register").hasRole("ADMIN")
+                                .requestMatchers("/list").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/list/**").hasRole("ADMIN")
                                 .anyRequest()
                                 .authenticated())
                 .formLogin(formLogin -> formLogin.loginPage("/login")
-                        .defaultSuccessUrl("/list")
+                        .defaultSuccessUrl("/loginsuccess")
                         .failureUrl("/login?error=true")
                         .permitAll());
 
         http.authenticationProvider(authenticationProvider()); // Seemingly optional
 
+//        http.logout((logout) -> logout.logoutSuccessUrl("/logout")
+//                .permitAll());
                 //.httpBasic(httpSec -> httpSec.authenticationEntryPoint(unauthorizedEntryPoint)).userDetailsService(userDetail);
 
 //                .formLogin(formLogin ->
