@@ -11,7 +11,7 @@ public interface UserService {
     MyUser loginUser(String username, String rawPassword);
     MyUser registerUser(UserDTO userDTO);
     List<MyUser> getAllUsers();
-    MyUser getUserById(Long id);
+    Optional<MyUser> getUserById(Long id);
     Optional<MyUser> updateUser(Long id, UserDTO userDTO);
     boolean deleteUser(Long id);
 }

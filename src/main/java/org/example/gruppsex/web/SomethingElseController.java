@@ -76,10 +76,22 @@ public class SomethingElseController {
     @GetMapping("/list/{id}")
     public String singleUser (@PathVariable Long id, Model model) {
 
-        MyUser user = userService.getUserById(id);
+        boolean user = userService.getUserById(id).isPresent();
 
-        model.addAttribute("user", user);
-        return "user";
+        if (user != false) {
+
+            MyUser user1 = userService.getUserById(id).get();
+
+            model.addAttribute("user", user1);
+
+            return "user";
+
+        } else {
+
+            model.addAttribute("id", id);
+            return "userNotFound";
+        }
+
     }
 
     @PostMapping("/list/{id}")
