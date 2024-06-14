@@ -207,7 +207,10 @@ public class SomethingElseController {
                     userService.deleteUser(user1.getId());
                 } catch (UsernameNotFoundException e) {
                     // insert logger.warn
-                    // stack trace the exception e
+                    // logga stack trace the exception e
+                    e.getStackTrace();
+                    e.getMessage();
+                    e.printStackTrace();
                     System.out.println("username not found");
 
                     model.addAttribute("id", user.getUsername());
@@ -254,7 +257,9 @@ public class SomethingElseController {
                 userService.updateUser(user1.getId(), user);
             } catch (UsernameNotFoundException e) {
                 //logger.warn
-                //stack trace exception e
+                //logga stack trace exception e
+                e.getStackTrace();
+                e.printStackTrace();
                 System.out.println("user with username not found");
             }
 
