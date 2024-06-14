@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.HtmlUtils;
 
 @Controller
 public class SomethingElseController {
@@ -50,8 +51,8 @@ public class SomethingElseController {
 
             MyUser user = new MyUser();
 
-            user.setUsername(userDTO.getUsername());
-            user.setPassword(encoder.encode(userDTO.getPassword()));
+            user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername())); // added HTMLUtils
+            user.setPassword(HtmlUtils.htmlEscape(encoder.encode(userDTO.getPassword())));
             user.setFirstName(userDTO.getFirstName());
             user.setLastName(userDTO.getLastName());
             user.setAge(userDTO.getAge());
@@ -110,17 +111,22 @@ public class SomethingElseController {
     @GetMapping("/delete/{id}")
     public String deleteUser (@PathVariable("id") Long id, Model model) {
 
-        MyUser user = userRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));
+        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
 
-        if (user != null) {
-            userRepository.delete(user);
 
-            model.addAttribute("user", user);
+        if (user == true) {
+
+            MyUser user2 = userRepository.findById(id).get();
+
+            userRepository.delete(user2);
+
+            model.addAttribute("user", user2);
 
             return "userDeleted";
 
         } else {
 
+            model.addAttribute("id", id);
             return "userNotFound";
         }
     }
@@ -148,6 +154,33 @@ public class SomethingElseController {
     @GetMapping("/error")
     public String showError () {
         return "error";
+    }
+
+    @GetMapping("/deleteuser")
+    public String deleteUserForm (Model model) {
+
+        model.addAttribute("user", new UserDTO());
+
+        return "deleteuser";
+    }
+
+    @PostMapping("/deleteuser")
+    public String deleteUser (@ModelAttribute("user") UserDTO user) {
+
+        MyUser user1 = userRepository.findByUsername(user.getUsername()).get();
+
+        if(user1.getRole() != "ADMIN") {
+
+            System.out.println("user.getRole: " );
+            userRepository.delete(user1);
+
+            return "userDeleted";
+
+        } else {
+
+            return "adminCantBeDeleted";
+
+        }
     }
 
 //    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();

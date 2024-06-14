@@ -40,7 +40,7 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/h2-console/**", /*"/register",*/ "/update/**", /*"/list/**",*/ "/update/**", "/delete/**");
+        return (web) -> web.ignoring().requestMatchers("/h2-console/**", /*"/register",*/ "/update/**", /*"/list/**",*/ "/update/**"/*, "/delete/**"*/);
     }
 
     @Bean
@@ -79,6 +79,7 @@ public class SecurityConfig {
                                 .requestMatchers("/register").hasRole("ADMIN")
                                 .requestMatchers("/list").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/list/**").hasRole("ADMIN")
+                                .requestMatchers("/delete/**").hasRole("ADMIN")
                                 .anyRequest()
                                 .authenticated())
                 .formLogin(formLogin -> formLogin.loginPage("/login")

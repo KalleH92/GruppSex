@@ -26,7 +26,17 @@ public class DatabaseInitializer {
         ADMIN.setAge("45");
         ADMIN.setRole("ADMIN");
 
+
+        MyUser user = new MyUser();
+        user.setUsername("test@user.com");
+        user.setPassword(encoder.encode("test"));
+        user.setFirstName("Max");
+        user.setLastName("Power");
+        user.setAge("12");
+        user.setRole("USER");
+
         userRepository.save(ADMIN);
+        userRepository.save(user);
 
     }
 

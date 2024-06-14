@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -15,6 +15,13 @@
 <span>Password: </span><span th:text="${user.password}"></span><br/><br/>
 <span>First name: </span><span th:text="${user.firstName}"></span><br/><br/>
 <span>Last name: </span><span th:text="${user.lastName}"></span><br/><br/>
+
+<div sec:authorize="hasAuthority('ADMIN')" > Has Authority ADMIN </div>
+<div sec:authorize="hasAuthority('USER')" > Has Authority USER </div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">Has Role ROLE_ADMIN</div>
+<div sec:authorize="hasRole('ROLE_USER')">Has Role ROLE_USER</div>
+<div sec:authorize="hasRole('ADMIN')">Has Role ADMIN</div>
+<div sec:authorize="hasRole('USER')">Has Role USER</div>
 
 
 </body>

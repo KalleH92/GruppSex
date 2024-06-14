@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>UpdateUser</title>
@@ -16,9 +16,10 @@
                 <span>Username: </span><span th:text="${singleuser.username}" ></span>
 
 
-            <a th:href="@{'/list/' + ${singleuser.id}}"><button>Update password</button></a>
-            <a th:href="@{'/delete/' + ${singleuser.id}}"><button>Delete user</button></a>
-
+            <div sec:authorize="hasRole('ADMIN')">
+                <a th:href="@{'/list/' + ${singleuser.id}}"><button>Update password</button></a>
+                <a th:href="@{'/delete/' + ${singleuser.id}}"><button>Delete user</button></a>
+            </div>
         </li>
 
     </ul>
