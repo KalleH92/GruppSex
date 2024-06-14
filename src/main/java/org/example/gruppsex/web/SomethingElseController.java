@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.example.gruppsex.model.MyUser;
+import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.example.gruppsex.service.Maskning;
@@ -13,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
@@ -49,15 +51,17 @@ public class SomethingElseController {
             return "registrera";
         } else {
 
-            MyUser user = new MyUser();
+            //MyUser user = new MyUser();
 
-            user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername())); // added HTMLUtils
-            user.setPassword(HtmlUtils.htmlEscape(encoder.encode(userDTO.getPassword())));
-            user.setFirstName(userDTO.getFirstName());
-            user.setLastName(userDTO.getLastName());
-            user.setAge(userDTO.getAge());
-            user.setRole("USER");
-            userRepository.save(user);
+            //user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername())); // added HTMLUtils
+            //user.setPassword(HtmlUtils.htmlEscape(encoder.encode(userDTO.getPassword())));
+            //user.setFirstName(userDTO.getFirstName());
+            //user.setLastName(userDTO.getLastName());
+            //user.setAge(userDTO.getAge());
+            //user.setRole("USER");
+            //userRepository.save(user);
+
+            userService.registerUser(userDTO);
 
             model.addAttribute("user", userDTO);
             //System.out.println();
@@ -95,7 +99,7 @@ public class SomethingElseController {
     }
 
     @PostMapping("/list/{id}")
-    public String updateUser ( @PathVariable Long id, @Valid @ModelAttribute("user") UserDTO user, BindingResult result, Model model, MyUser myUser) {
+    public String updateUser ( @PathVariable Long id, @Valid @ModelAttribute("user") /*UserDTO*/UpdateUserDTO user, BindingResult result, Model model, MyUser myUser) {
 
         if (result.hasErrors()) {
             return "user";
@@ -107,11 +111,17 @@ public class SomethingElseController {
 //        user.setFirstName(user.getFirstName());
 //        user.setLastName(user.getLastName());
 
-
         //userRepository.save(user);
-        userService.updateUser(id, user);
 
-        user.setId(myUser.getId());
+        try {
+            userService.updateUser(id, user);
+        } catch (UsernameNotFoundException e) {
+            //implement logger.warn
+            //stack trace the exception e
+            System.out.println("username not found when updating user");
+        }
+
+        //user.setId(myUser.getId());
 
         model.addAttribute("user", user);
 
@@ -156,9 +166,10 @@ public class SomethingElseController {
 
         User user = (User) authentication.getPrincipal();
 
-        MyUser user2 = userRepository.findByUsername(user.getUsername()).get();
+        //MyUser user2 = userRepository.findByUsername(user.getUsername()).get();
+        MyUser user1 = userService.getUserByUsername(user.getUsername()).get();
 
-        model.addAttribute("user", user2);
+        model.addAttribute("user", user1);
 
         return "loginSuccess";
     }
@@ -180,16 +191,30 @@ public class SomethingElseController {
     public String deleteUser (@ModelAttribute("user") UserDTO user, Model model) {
 
 
-        boolean user0 = userRepository.findByUsername(user.getUsername()).isPresent();
+        //boolean user0 = userRepository.findByUsername(user.getUsername()).isPresent();
 
-        if (user0 != false) {
+        boolean user3 = userService.getUserByUsername(user.getUsername()).isPresent();
 
-            MyUser user1 = userRepository.findByUsername(HtmlUtils.htmlEscape(user.getUsername())).get();
+        if (user3 != false) {
+
+            MyUser user1 = userService.getUserByUsername(HtmlUtils.htmlEscape(user.getUsername())).get();
 
             if(user1.getRole() != "ADMIN") {
 
-                System.out.println("user.getRole: " );
-                userRepository.delete(user1);
+                System.out.println("user.getRole: " + user1.getRole());
+
+                try {
+                    userService.deleteUser(user1.getId());
+                } catch (UsernameNotFoundException e) {
+                    // insert logger.warn
+                    // stack trace the exception e
+                    System.out.println("username not found");
+
+                    model.addAttribute("id", user.getUsername());
+                    return "userNotFound";
+                }
+
+                //userRepository.delete(user1);
 
                 return "userDeleted";
 
@@ -205,6 +230,47 @@ public class SomethingElseController {
         }
 
     }
+
+    @GetMapping("/updateuser")
+    public String updatePasswordForm (Model model) {
+
+        model.addAttribute("user", new UpdateUserDTO());
+        return "updateUser";
+    }
+
+    @PostMapping("/updateuser")
+    public String updatePassword (@Valid @ModelAttribute("user") UpdateUserDTO user, BindingResult result, Model model, MyUser myUser) {
+
+        if (result.hasErrors()) {
+            return "updateUser";
+        }
+
+        boolean userExists = userService.getUserByUsername(user.getUsername()).isPresent();
+
+        if (userExists) {
+            MyUser user1 = userService.getUserByUsername(user.getUsername()).get();
+
+            try {
+                userService.updateUser(user1.getId(), user);
+            } catch (UsernameNotFoundException e) {
+                //logger.warn
+                //stack trace exception e
+                System.out.println("user with username not found");
+            }
+
+
+            model.addAttribute("user", user1);
+
+            return "updateSuccess";
+
+        } else {
+
+            model.addAttribute("id", user.getUsername());
+            return "userNotFound";
+        }
+
+    }
+
 
 //    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
 //

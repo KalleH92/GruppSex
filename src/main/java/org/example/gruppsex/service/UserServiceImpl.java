@@ -2,6 +2,7 @@
 package org.example.gruppsex.service;
 
 import org.example.gruppsex.model.MyUser;
+import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +66,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<MyUser> updateUser(Long id, UserDTO userDTO) {
+    public Optional<MyUser> getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public Optional<MyUser> updateUser(Long id, UpdateUserDTO userDTO) throws UsernameNotFoundException {
         Optional<MyUser> optionalUser = userRepository.findById(id);
         if (optionalUser.isPresent()) {
             MyUser user = optionalUser.get();
@@ -73,10 +79,10 @@ public class UserServiceImpl implements UserService {
             if (userDTO.getPassword() != null && !userDTO.getPassword().isEmpty()) {
                 user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
             }
-            user.setFirstName(userDTO.getFirstName());
-            user.setLastName(userDTO.getLastName());
-            user.setAge(userDTO.getAge());
-            user.setRole(userDTO.getRole());
+            //user.setFirstName(userDTO.getFirstName());
+            //user.setLastName(userDTO.getLastName());
+            //user.setAge(userDTO.getAge());
+            //user.setRole(userDTO.getRole());
             System.out.println("password updated");
             return Optional.of(userRepository.save(user));
         }
@@ -84,7 +90,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteUser(Long id) {
+    public boolean deleteUser(Long id) throws UsernameNotFoundException {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             System.out.println("user with id deleted: " + id);

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Uppdatera användare lösenord</h1>
+
+<form action="#" th:action="@{/updateuser}" method="post" th:object="${user}">
+
+    <label for="username">Full email: </label>
+    <input type="text" th:field="*{username}" id="username"/><br/>
+    <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Full email error</span>
+    <br/>
+    <br/>
+
+    <label for="password">Password: </label>
+    <input type="password" th:field="*{password}" id="password" placeholder="password">
+    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name error</span>
+    <br/><br/>
+
+    <button type="submit" >Uppdatera</button>
+
+</form>
+
+</body>
+</html>

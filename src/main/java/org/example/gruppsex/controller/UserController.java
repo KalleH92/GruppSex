@@ -36,11 +36,11 @@ public class UserController {
         return ResponseEntity.status(201).body(user);
     }
 
-    @PutMapping("/{id}")
+    /*@PutMapping("/{id}")
     public ResponseEntity<MyUser> updateUser(@PathVariable Long id, @RequestBody UserDTO userDTO) {
         Optional<MyUser> user = userService.updateUser(id, userDTO);
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
-    }
+    }*/
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
