@@ -65,7 +65,8 @@ public class SomethingElseController {
 
             model.addAttribute("user", userDTO);
             //System.out.println();
-            return "registrera";
+            //return "registrera";
+            return "regsuc";
 
         }
     }
@@ -159,19 +160,31 @@ public class SomethingElseController {
         return "login";
     }
 
-    @GetMapping("/loginsuccess")
-    public String loggedInSuccessfully (Model model) {
-
+    @GetMapping("/"/*"/loginsuccess"*/)
+    public String loggedInSuccessfully(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        User user = (User) authentication.getPrincipal();
+        Object principal = authentication.getPrincipal();
 
-        //MyUser user2 = userRepository.findByUsername(user.getUsername()).get();
-        MyUser user1 = userService.getUserByUsername(user.getUsername()).get();
+        if (principal instanceof org.springframework.security.core.userdetails.User) {
+            User user = (User) principal;
+            MyUser user1 = userService.getUserByUsername(user.getUsername()).orElse(null);
 
-        model.addAttribute("user", user1);
+            if (user1 != null) {
+                model.addAttribute("user", user1);
+                return "loginSuccess";
+            }
+        } else if (principal instanceof String) {
+            String username = (String) principal;
+            MyUser user1 = userService.getUserByUsername(username).orElse(null);
 
-        return "loginSuccess";
+            if (user1 != null) {
+                model.addAttribute("user", user1);
+                return "loginSuccess";
+            }
+        }
+
+        return "login";
     }
 
     @GetMapping("/error")
@@ -279,10 +292,21 @@ public class SomethingElseController {
 
 //    SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
 //
-//    @GetMapping("/logout")
-//    public String logout () {
-//        return "logout";
-//    }
+    @GetMapping("/logout")
+    public String logout () {
+        return "logout";
+    }
+
+    @PostMapping("/logout")
+    public String performLogout () {
+        System.out.println("logged out");
+        return "logoutSuccess";
+    }
+
+    @GetMapping("/logoutsuccess")
+    public String getLogoutSuccess () {
+        return "logoutSuccess";
+    }
 //
 //    @PostMapping("/logout")
 //    public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {

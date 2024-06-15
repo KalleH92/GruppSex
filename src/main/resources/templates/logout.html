@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Logged out</h1>
+    <h1>Logg out</h1>
+
+    <form name="logoutForm" th:action="@{/logout}" method="post">
+        <button type="submit">Logga ut</button>
+    </form>
+
 </body>
 </html>

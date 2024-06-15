@@ -82,8 +82,9 @@ public class SecurityConfig {
                                 .requestMatchers("/deleteuser").hasRole("ADMIN")
                                 .anyRequest()
                                 .authenticated())
+                .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/logoutsuccess").permitAll())
                 .formLogin(formLogin -> formLogin.loginPage("/login")
-                        .defaultSuccessUrl("/loginsuccess")
+                        .defaultSuccessUrl("/"/*"/loginsuccess"*/)
                         .failureUrl("/login?error=true")
                         .permitAll());
 

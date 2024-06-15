@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.HashSet;
 import java.util.List;
@@ -44,12 +45,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public MyUser registerUser(UserDTO userDTO) {
         MyUser user = new MyUser();
-        user.setUsername(userDTO.getUsername());
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername()));
+        user.setPassword(passwordEncoder.encode(HtmlUtils.htmlEscape(userDTO.getPassword())));
         user.setFirstName(userDTO.getFirstName());
         user.setLastName(userDTO.getLastName());
         user.setAge(userDTO.getAge());
-        user.setRole(userDTO.getRole());
+        user.setRole("USER");
         System.out.println("user registered");
         return userRepository.save(user);
     }
