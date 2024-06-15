@@ -71,11 +71,11 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.ignoringRequestMatchers("/register"))
+        http/*csrf(csrf -> csrf.ignoringRequestMatchers("/register"))*/
                 .authorizeHttpRequests(
                         authorizeRequest -> authorizeRequest.requestMatchers("/admin")
-                                .hasRole("ADMIN").requestMatchers("/")
-                                .permitAll()
+                                .hasRole("ADMIN")
+                                .requestMatchers("/").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/register").hasRole("ADMIN")
                                 .requestMatchers("/list").hasAnyRole("USER", "ADMIN")
                                 .requestMatchers("/list/**").hasRole("ADMIN")
@@ -83,6 +83,7 @@ public class SecurityConfig {
                                 .anyRequest()
                                 .authenticated())
                 .logout((logout) -> logout.logoutUrl("/logout").logoutSuccessUrl("/logoutsuccess").permitAll())
+                //.httpBasic(Customizer.withDefaults());
                 .formLogin(formLogin -> formLogin.loginPage("/login")
                         .defaultSuccessUrl("/"/*"/loginsuccess"*/)
                         .failureUrl("/login?error=true")
