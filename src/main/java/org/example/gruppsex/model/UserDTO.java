@@ -1,8 +1,11 @@
 package org.example.gruppsex.model;
 
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jdk.jfr.Name;
+import org.springframework.beans.factory.annotation.Value;
 
 public class UserDTO {
 
@@ -24,9 +27,16 @@ public class UserDTO {
     @Size(min = 4, max = 8, message = "Lösenord måste vara mellan 4-8 bokstäver")
     private String password;
 
+    @NotBlank (message = "Ange ett förnamn")
     private String firstName;
+
+    @NotBlank (message = "Ange ett efternamn")
     private String lastName;
+
+    @NotBlank (message = "Ange en ålder")
+    @Min(value = 1, message = "Ange en giltig ålder")
     private String age;
+
     private String role;
 
     public String getUsername() {

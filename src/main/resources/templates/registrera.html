@@ -73,7 +73,7 @@
         <br/>
 
         <label>Full ålder: </label>
-        <input type="text" th:field="*{age}" /><br/>
+        <input type="number" th:field="*{age}" /><br/>
         <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Full name error</span>
 
         <br/>

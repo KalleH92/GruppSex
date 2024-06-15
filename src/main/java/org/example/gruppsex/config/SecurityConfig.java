@@ -35,9 +35,6 @@ public class SecurityConfig {
     @Autowired
     private UserDetail userDetail;
 
-    @Autowired
-    private UnauthorizedEntrypoint unauthorizedEntryPoint;
-
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring().requestMatchers("/h2-console/**", /*"/register",*/ "/update/**", /*"/list/**",*/ "/update/**"/*, "/delete/**"*/);
