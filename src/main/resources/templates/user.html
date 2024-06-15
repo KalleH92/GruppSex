@@ -39,10 +39,10 @@
     <h1 th:text="${user.username}"></h1>
 
     <div>
-        <p>Role: </p> <p th:text="${user.role}"></p>
-        <p>Age: </p><p th:text="${user.age}"></p>
-        <p>First name: </p><p th:text="${user.firstName}"></p>
-        <p>Last name: </p><p th:text="${user.lastName}"></p>
+        <p>Roll: </p> <p th:text="${user.role}"></p>
+        <p>Ålder: </p><p th:text="${user.age}"></p>
+        <p>Förnamn: </p><p th:text="${user.firstName}"></p>
+        <p>Efternamn: </p><p th:text="${user.lastName}"></p>
     </div>
 
     <form action="#"
@@ -76,14 +76,14 @@
         <br/><br/></div>
 
 
-        <label for="password">Password: </label>
+        <label for="password">Lösenord: </label>
         <input type="password" th:field="*{password}" id="password" placeholder="password">
         <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name error</span>
         <br/><br/>
 
 
 
-        <input type="submit" value="Update User">
+        <input type="submit" value="Updatera användare">
     </form>
     <br/>
     <a th:href="@{'/'}"><button>Till första sida</button></a>

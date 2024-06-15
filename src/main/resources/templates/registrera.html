@@ -56,7 +56,7 @@
 
         <br/>
 
-        <label>Full Name: </label>
+        <label>Full Förnamn: </label>
         <input type="text" th:field="*{firstName}" /><br/>
         <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Full name error</span>
 
@@ -64,7 +64,7 @@
 
         <br/>
 
-        <label>Full Last name: </label>
+        <label>Full Efternamn: </label>
         <input type="text" th:field="*{lastName}" /><br/>
         <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Full name error</span>
 
@@ -72,7 +72,7 @@
 
         <br/>
 
-        <label>Full age: </label>
+        <label>Full ålder: </label>
         <input type="text" th:field="*{age}" /><br/>
         <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Full name error</span>
 
