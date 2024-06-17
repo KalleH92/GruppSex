@@ -67,12 +67,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<MyUser> getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public Optional<MyUser> getUserByUsername(String username) throws UsernameNotFoundException {
+
+        Optional<MyUser> user = userRepository.findByUsername(username);
+
+        if (user.isPresent()) {
+            return user;
+        } else {
+            throw new UsernameNotFoundException("Användare hittades inte: " + username);
+        }
+
+        // return userRepository.findByUsername(username);
     }
 
     @Override
-    public Optional<MyUser> updateUser(Long id, UpdateUserDTO userDTO) throws UsernameNotFoundException {
+    public Optional<MyUser> updateUser(Long id, UpdateUserDTO userDTO) {
         Optional<MyUser> optionalUser = userRepository.findById(id);
         if (optionalUser.isPresent()) {
             MyUser user = optionalUser.get();
@@ -87,11 +96,12 @@ public class UserServiceImpl implements UserService {
             System.out.println("password updated");
             return Optional.of(userRepository.save(user));
         }
-        return Optional.empty();
+        throw new UsernameNotFoundException("Användare  hittades inte här heller: " + id);
+        //return Optional.empty();
     }
 
     @Override
-    public boolean deleteUser(Long id) throws UsernameNotFoundException {
+    public boolean deleteUser(Long id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             System.out.println("user with id deleted: " + id);

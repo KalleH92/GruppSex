@@ -1,24 +1,20 @@
 package org.example.gruppsex.web;
 
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
-import org.example.gruppsex.service.Maskning;
+import org.example.gruppsex.service.MaskUtils;
 import org.example.gruppsex.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,14 +22,14 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
 @Controller
-public class SomethingElseController {
+public class ThymeleafController {
     private final UserRepository userRepository;
     private final PasswordEncoder encoder;
     private final UserService userService;
-    private static final Logger logger = LoggerFactory.getLogger(SomethingElseController.class);
+    private static final Logger logger = LoggerFactory.getLogger(ThymeleafController.class);
 
 
-    public SomethingElseController(UserRepository userRepository, PasswordEncoder encoder, UserService userService) {
+    public ThymeleafController(UserRepository userRepository, PasswordEncoder encoder, UserService userService) {
         this.userRepository = userRepository;
         this.encoder = encoder;
         this.userService = userService;
@@ -56,7 +52,7 @@ public class SomethingElseController {
             logger.debug("Fel information angiven baserad på DTOobjektets krav.");
             return "registrera";
         } else {
-            logger.debug("Korrekt information baserad på DTOobjektets krav och lagt till användare " + Maskning.maskEmail(userDTO.getUsername()) + ".");
+            logger.debug("Korrekt information baserad på DTOobjektets krav och lagt till användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(userDTO.getUsername())) + ".");
 
             //MyUser user = new MyUser();
 
@@ -131,7 +127,7 @@ public class SomethingElseController {
         try {
             userService.updateUser(id, user);
         } catch (UsernameNotFoundException e) {
-            logger.warn("Användaren " + Maskning.maskEmail(user.getUsername()) + " hittades inte vid uppdatering.");
+            logger.warn("Användaren " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user.getUsername())) + " hittades inte vid uppdatering.");
             logger.error("UserNameNotFoundException: ", e);
             //implement logger.warn
             //stack trace the exception e
@@ -188,20 +184,20 @@ public class SomethingElseController {
             logger.debug("Principal är en User.");
 
             User user = (User) principal;
-            MyUser user1 = userService.getUserByUsername(user.getUsername()).orElse(null);
+            MyUser user1 = userService.getUserByUsername(HtmlUtils.htmlEscape(user.getUsername())).orElse(null);
 
             if (user1 != null) {
-                logger.debug("Inloggning för användare " + Maskning.maskEmail(user1.getUsername()) + "lyckats.");
+                logger.debug("Inloggning för användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user1.getUsername())) + "lyckats.");
                 model.addAttribute("user", user1);
                 return "loginSuccess";
             }
         } else if (principal instanceof String) {
             logger.debug("Principal är en String.");
             String username = (String) principal;
-            MyUser user1 = userService.getUserByUsername(username).orElse(null);
+            MyUser user1 = userService.getUserByUsername(HtmlUtils.htmlEscape(username)).orElse(null);
 
             if (user1 != null) {
-                logger.debug("Inloggning för användare " + Maskning.maskEmail(user1.getUsername()) + "lyckats.");
+                logger.debug("Inloggning för användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user1.getUsername())) + "lyckats.");
                 model.addAttribute("user", user1);
                 return "loginSuccess";
             }
@@ -230,46 +226,41 @@ public class SomethingElseController {
         logger.debug("Logiken för att ta bort en användare.");
 
 
-        //boolean user0 = userRepository.findByUsername(user.getUsername()).isPresent();
-
-        boolean user3 = userService.getUserByUsername(user.getUsername()).isPresent();
-
-        if (user3 != false) {
+        try {
 
             MyUser user1 = userService.getUserByUsername(HtmlUtils.htmlEscape(user.getUsername())).get();
 
-            if(user1.getRole() != "ADMIN") {
-                logger.debug("Användare har ej role ADMIN.");
+            //boolean user0 = userRepository.findByUsername(user.getUsername()).isPresent();
 
-                System.out.println("user.getRole: " + user1.getRole());
+            //boolean user3 = userService.getUserByUsername(user.getUsername()).isPresent();
 
-                try {
-                    userService.deleteUser(user1.getId());
-                } catch (UsernameNotFoundException e) {
-                    logger.warn("Användaren " + Maskning.maskEmail(user.getUsername()) + " hittades inte vid borttagning.");
-                    logger.error("UserNameNotFoundException: ", e);
-                    // insert logger.warn
-                    // logga stack trace the exception e
-                    System.out.println("username not found");
+                if(user1.getRole() != "ADMIN") {
+                    logger.debug("Användare har ej role ADMIN.");
 
-                    model.addAttribute("id", user.getUsername());
-                    return "userNotFound";
+                    System.out.println("user.getRole: " + user1.getRole());
+
+
+                        userService.deleteUser(user1.getId());
+
+
+                    //userRepository.delete(user1);
+
+                    System.out.println("User deleted");
+                    return "userDeleted";
+
+                } else {
+
+                    logger.warn("ADMIN kan ej bli borttagen.");
+                    return "adminCantBeDeleted";
                 }
 
-                //userRepository.delete(user1);
-
-                return "userDeleted";
-
-            } else {
-                logger.warn("ADMIN kan ej bli borttagen.");
-                return "adminCantBeDeleted";
+            } catch (UsernameNotFoundException e) {
+                logger.error("Ingen sån användare :(", e);
             }
-
-        } else {
-            logger.warn("Användaren " + Maskning.maskEmail(user.getUsername()) + " hittades inte vid borttagning.");
-            model.addAttribute("id", user.getUsername());
-            return "userNotFound";
-        }
+                logger.warn("Användaren " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user.getUsername())) + " hittades inte vid borttagning.");
+                model.addAttribute("id", HtmlUtils.htmlEscape(HtmlUtils.htmlEscape(user.getUsername())));
+                return "userNotFound";
+        //return "userNotFound";
     }
 
     @GetMapping("/updateuser")
@@ -289,36 +280,29 @@ public class SomethingElseController {
             return "updateUser";
         }
 
-        boolean userExists = userService.getUserByUsername(user.getUsername()).isPresent();
+        try {
 
-        if (userExists) {
-            logger.debug("Användare har hittats.");
-            MyUser user1 = userService.getUserByUsername(user.getUsername()).get();
+            MyUser user1 = userService.getUserByUsername(HtmlUtils.htmlEscape(user.getUsername())).get();
 
-            try {
-                userService.updateUser(user1.getId(), user);
-            } catch (UsernameNotFoundException e) {
-                logger.warn("Användare " + Maskning.maskEmail(user.getUsername()) + "hittades inte vid uppdatering.");
-                logger.error("UserNameNotFoundException: ", e);
-                logger.error("Kollar vad e.getStackTrace är för något", e.getStackTrace());
-                //logger.warn
-                //logga stack trace exception e
-                //Ta upp på handledning
-//                e.getStackTrace();
-//                e.printStackTrace();
-
-                System.out.println("user with username not found");
-            }
+            userService.updateUser(user1.getId(), user);
 
             model.addAttribute("user", user1);
 
             return "updateSuccess";
 
-        } else {
-            logger.warn("Användare " + Maskning.maskEmail(user.getUsername()) + "hittades inte vid uppdatering.");
-            model.addAttribute("id", user.getUsername());
-            return "userNotFound";
+        } catch (UsernameNotFoundException e) {
+
+            logger.debug("Användare har hittats.");
+            logger.error("Ingen sån användare :(", e);
+            logger.warn("Användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user.getUsername())) + "hittades inte vid uppdatering.");
+            logger.error("UserNameNotFoundException: ", e);
+            logger.error("Kollar vad e.getStackTrace är för något", e.getStackTrace());
+            System.out.println("user with username not found");
         }
+
+        logger.warn("Användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user.getUsername())) + "hittades inte vid uppdatering.");
+        model.addAttribute("id", HtmlUtils.htmlEscape(user.getUsername()));
+        return "userNotFound";
 
     }
 

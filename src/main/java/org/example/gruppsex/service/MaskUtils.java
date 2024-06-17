@@ -1,6 +1,6 @@
 package org.example.gruppsex.service;
 
-public class Maskning {
+public class MaskUtils {
     public static String maskEmail(String email) {
         int atIndex = email.indexOf('@');
         if (atIndex <= 1) {
