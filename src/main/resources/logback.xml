@@ -24,7 +24,7 @@
     </appender>
 
     <!-- Logger för baspaketet som loggar till ROLLING file -->
-    <logger name="org.example.gruppsex.web" level="DEBUG" additivity="false">
+    <logger name="se.sprinto.hakan.securityapp" level="DEBUG" additivity="false">
         <appender-ref ref="ROLLING" />
     </logger>
 
