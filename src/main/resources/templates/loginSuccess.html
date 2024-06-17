@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Inloggad!</h1>
+
+<!--    <span>E-mail:</span><span th:text="${user.email}"></span><br/>-->
+
+<span>Inloggad som: </span><span th:text="${user.username}"></span><br/><br/>
+<span>Ålder: </span><span th:text="${user.age}"></span><br/><br/>
+<span>Roll: </span><span th:text="${user.role}"></span><br/><br/>
+<span>Password: </span><span th:text="${user.password}"></span><br/><br/>
+<span>Förnamn: </span><span th:text="${user.firstName}"></span><br/><br/>
+<span>Efternamn: </span><span th:text="${user.lastName}"></span><br/><br/>
+
+<div sec:authorize="hasAuthority('ADMIN')" > Has Authority ADMIN </div>
+<div sec:authorize="hasAuthority('USER')" > Has Authority USER </div>
+<div sec:authorize="hasRole('ROLE_ADMIN')">Has Roll ROLE_ADMIN</div>
+<div sec:authorize="hasRole('ROLE_USER')">Has Roll ROLE_USER</div>
+
+<div sec:authorize="hasRole('ADMIN')">Har Roll ADMIN
+    <br/>
+    <a th:href="@{'/register'}"><button>Registrera ny användare</button></a>
+    <br/>
+
+    <a th:href="@{'/list'}"><button>Visa användare</button></a>
+    <br/>
+
+    <a th:href="@{'/deleteuser'}"><button>Ta bort användare</button></a>
+    <br/>
+
+    <a th:href="@{'/updateuser'}"><button>Uppdatera användare</button></a>
+    <br/>
+
+
+</div>
+
+<div sec:authorize="hasRole('USER')">Har Roll USER</div>
+
+<form name="logoutForm" th:action="@{/logout}" method="post">
+    <button type="submit">Logga ut</button>
+</form>
+
+
+</body>
+</html>

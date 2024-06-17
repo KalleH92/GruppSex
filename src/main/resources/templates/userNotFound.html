@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UserNotFound</title>
+</head>
+<body>
+    <h1>Användare hittades inte med id eller email: </h1>
+    <h1 th:text="${id}"></h1>
+
+    <br/>
+    <a th:href="@{'/'}"><button>Till första sida</button></a>
+    <br/>
+
+</body>
+</html>

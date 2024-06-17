@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+        span {
+            color: #001aff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 th:text="${user.username}"></h1>
+
+    <div>
+        <p>Roll: </p> <p th:text="${user.role}"></p>
+        <p>Ålder: </p><p th:text="${user.age}"></p>
+        <p>Förnamn: </p><p th:text="${user.firstName}"></p>
+        <p>Efternamn: </p><p th:text="${user.lastName}"></p>
+    </div>
+
+    <form action="#"
+          th:action="@{/list/{id}(id=${user.id})}"
+          th:object="${user}"
+          method="post">
+
+        <div hidden><label for="name">First Name</label>
+        <input type="text" th:field="*{firstName}" id="name" placeholder="First Name">
+        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+        <br/><br/>
+
+        <label for="name">Last Name</label>
+        <input type="text" th:field="*{lastName}" id="lastname" placeholder="Last Name">
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+        <br/><br/>
+
+        <label for="name">Age</label>
+        <input type="text" th:field="*{age}" id="age" placeholder="age">
+        <span th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
+        <br/><br/>
+
+        <label for="username">Username</label>
+        <input type="text" th:field="*{username}" id="username" placeholder="Username">
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span>
+        <br/><br/>
+
+        <label for="name">Role</label>
+        <input type="text" th:field="*{role}" id="role" placeholder="role">
+        <span th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></span>
+        <br/><br/></div>
+
+
+        <label for="password">Lösenord: </label>
+        <input type="password" th:field="*{password}" id="password" placeholder="password">
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Full name error</span>
+        <br/><br/>
+
+
+
+        <input type="submit" value="Updatera användare">
+    </form>
+    <br/>
+    <a th:href="@{'/'}"><button>Till första sida</button></a>
+    <br/>
+
+</body>
+</html>

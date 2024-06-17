@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login Sida</title>
+    <style type="text/css">
+        label {
+            display: inline-block;
+            width: 200px;
+            margin: 5px;
+            text-align: left;
+        }
+        input[type=text], input[type=password], select {
+            display: inline-block;
+            width: 200px;
+        }
+        input[type=radio] {
+            margin-left: 45px;
+        }
+        input[type=checkbox] {
+            margin-right: 190px;
+        }
+        button {
+            padding: 5px;
+            margin: 10px;
+        }
+        .error {
+            color: blue;
+            font-style: italic;
+        }
+        span {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Login sida</h1>
+
+<div align="center">
+    <form name="f" th:action="@{/login}" method="POST">
+
+        <label>Full username: </label>
+        <input class="form-control" type="text" name="username" value="" />
+        <br/>
+
+        <label>Full Password: </label>
+        <input class="form-control" type="password" name="password" value="" />
+        <br/>
+
+        <input name="submit" type="submit" value="Skicka" />
+
+        <div th:if="${param.error}" class="error">
+            Användarnamn eller lösenord felaktigt
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
