@@ -47,6 +47,7 @@ public class ThymeleafController {
     @PostMapping("/register")
     public String submitForm (@Valid @ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult, Model model) {
         logger.debug("Registrerad användares information.");
+        userDTO.getUsername();
 
         if (bindingResult.hasErrors()) {
             logger.debug("Fel information angiven baserad på DTOobjektets krav.");
@@ -143,28 +144,28 @@ public class ThymeleafController {
 
     }
 
-//    @GetMapping("/delete/{id}")
-//    public String deleteUser (@PathVariable("id") Long id, Model model) {
-//
-//        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
-//
-//
-//        if (user == true) {
-//
-//            MyUser user2 = userRepository.findById(id).get();
-//
-//            userRepository.delete(user2);
-//
-//            model.addAttribute("user", user2);
-//
-//            return "userDeleted";
-//
-//        } else {
-//
-//            model.addAttribute("id", id);
-//            return "userNotFound";
-//        }
-//    }
+    @GetMapping("/delete/{id}")
+    public String deleteUser (@PathVariable("id") Long id, Model model) {
+
+        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
+
+
+        if (user == true) {
+
+            MyUser user2 = userRepository.findById(id).get();
+
+            userRepository.delete(user2);
+
+            model.addAttribute("user", user2);
+
+            return "userDeleted";
+
+        } else {
+
+            model.addAttribute("id", id);
+            return "userNotFound";
+        }
+    }
 
     @GetMapping("/login")
     public String login () {

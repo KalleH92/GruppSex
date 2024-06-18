@@ -1,0 +1,198 @@
+2024-06-18 10:23:34 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:23:45 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:23:45 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:23:45 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:23:55 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:24:05 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:24:05 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:24:09 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:24:09 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:24:09 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:24:13 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:24:24 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:24:24 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:24:24 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:24:31 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Meddelar lyckad utloggnings-sida.
+2024-06-18 10:24:32 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:24:37 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:24:42 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:24:48 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:24:52 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:25:00 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:25:00 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:25:00 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:25:02 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:25:04 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Information om användare med id: 2.
+2024-06-18 10:25:04 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Användare med id 2 kunde hittas.
+2024-06-18 10:25:07 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Uppdatering av användares lösenord.
+2024-06-18 10:25:07 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Lösenordet kan uppdateras.
+2024-06-18 10:25:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:25:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:25:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:25:20 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:25:47 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:25:47 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:25:47 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:25:49 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Borttagning av användare sida.
+2024-06-18 10:25:56 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:25:56 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:25:56 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:04 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:26:09 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:09 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:09 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:11 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Borttagning av användare sida.
+2024-06-18 10:26:14 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Logiken för att ta bort en användare.
+2024-06-18 10:26:19 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:19 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:19 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:21 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:26:28 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:28 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:28 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:30 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:26:42 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:26:42 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare p*w@max.com.
+2024-06-18 10:26:46 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:46 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:46 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:48 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:26:50 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:50 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:50 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:26:52 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Borttagning av användare sida.
+2024-06-18 10:26:55 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Logiken för att ta bort en användare.
+2024-06-18 10:26:55 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användare har ej role ADMIN.
+2024-06-18 10:26:59 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:26:59 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:26:59 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:27:00 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:27:34 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:27:43 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:27:49 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:27:49 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:27:49 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:27:50 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:27:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:27:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:27:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:27:55 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:28:01 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:28:01 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:28:01 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:29:12 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:29:19 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:29:25 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:29:25 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:29:25 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:29:36 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:29:36 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:29:36 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare t**t@user.comlyckats.
+2024-06-18 10:29:43 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:29:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:30:04 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:30:04 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare a***n@admin.com.
+2024-06-18 10:30:07 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:07 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:07 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare t**t@user.comlyckats.
+2024-06-18 10:30:12 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:30:21 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:30:21 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:30:26 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:30:33 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:33 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:34 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:34 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:35 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:35 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:36 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:36 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:36 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:36 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:36 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:36 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:37 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:37 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:37 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:37 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:38 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:38 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:30:40 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:30:40 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:31:35 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:31:42 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:31:42 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:31:42 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:31:44 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:31:48 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:31:48 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:31:48 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:31:49 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:31:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:31:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:31:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:31:57 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:32:06 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:32:06 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:32:10 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:10 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:10 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:11 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:32:19 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:32:19 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:32:23 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:23 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:23 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:24 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:32:32 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:32 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:32 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:33 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:32:36 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:36 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:36 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:38 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:32:49 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:32:49 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:32:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:53 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:55 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:32:57 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:32:57 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:32:57 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:32:59 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Borttagning av användare sida.
+2024-06-18 10:33:02 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Logiken för att ta bort en användare.
+2024-06-18 10:33:03 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:33:03 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:33:03 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:33:29 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Meddelar lyckad utloggnings-sida.
+2024-06-18 10:33:30 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:33:34 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:35:21 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Användarnamn och lösenord ska anges.
+2024-06-18 10:35:29 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:35:29 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:35:29 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:35:31 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:35:33 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:35:33 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:35:33 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:35:34 [http-nio-8080-exec-7] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerings-sida.
+2024-06-18 10:35:43 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerad användares information.
+2024-06-18 10:35:43 [http-nio-8080-exec-8] DEBUG o.e.gruppsex.web.ThymeleafController - Korrekt information baserad på DTOobjektets krav och lagt till användare t**t@user.com.
+2024-06-18 10:35:56 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:35:56 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:35:56 [http-nio-8080-exec-9] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:35:59 [http-nio-8080-exec-10] DEBUG o.e.gruppsex.web.ThymeleafController - Registrerade användare.
+2024-06-18 10:36:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Information om användare med id: 3.
+2024-06-18 10:36:51 [http-nio-8080-exec-1] DEBUG o.e.gruppsex.web.ThymeleafController - Användare med id 3 kunde hittas.
+2024-06-18 10:36:58 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Uppdatering av användares lösenord.
+2024-06-18 10:36:58 [http-nio-8080-exec-2] DEBUG o.e.gruppsex.web.ThymeleafController - Lösenordet kan uppdateras.
+2024-06-18 10:37:01 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:37:01 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:37:01 [http-nio-8080-exec-3] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
+2024-06-18 10:37:03 [http-nio-8080-exec-4] DEBUG o.e.gruppsex.web.ThymeleafController - Uppdatering av användarens lösenord-sida.
+2024-06-18 10:37:09 [http-nio-8080-exec-5] DEBUG o.e.gruppsex.web.ThymeleafController - Uppdatering av en användares lösenord har försökts.
+2024-06-18 10:37:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning har försökts.
+2024-06-18 10:37:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Principal är en User.
+2024-06-18 10:37:11 [http-nio-8080-exec-6] DEBUG o.e.gruppsex.web.ThymeleafController - Inloggning för användare a***n@admin.comlyckats.
