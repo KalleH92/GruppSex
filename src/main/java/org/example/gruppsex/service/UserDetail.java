@@ -15,6 +15,21 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * UserDetail-klassen implementerar UserDetailsService och används för att ladda användardetaljer vid inloggning.
+ * Den hämtar användarinformation från databasen och omvandlar den till ett format som används av Spring Security.
+ *
+ * Viktiga komponenter i denna klass inkluderar:
+ * - @Service: Markerar denna klass som en Spring-tjänstkomponent.
+ * - userRepository: En instans av UserRepository som används för att hämta användare från databasen.
+ *
+ * Metoder:
+ * - loadUserByUsername: Laddar användardetaljer baserat på användarnamnet.
+ *   - @param username: Användarnamnet för att söka efter användaren.
+ *   - @return: Ett UserDetails-objekt som innehåller användarens information.
+ *   - @throws UsernameNotFoundException: Kastas om ingen användare med det angivna användarnamnet hittas.
+ */
+
 @Service
 public class UserDetail implements UserDetailsService {
 
@@ -26,29 +41,7 @@ public class UserDetail implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    //private Set<GrantedAuthority> set = new HashSet<>();
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//
-//        MyUser user = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user not found"));
-//
-//
-//        if (user.isEmpty()) {
-//            new UsernameNotFoundException("User not exists with username: " + username);
-//        }
-//
-//        GrantedAuthority authorities = new SimpleGrantedAuthority(user.get().getRole().toString());
-//
-//        //set.add(authorities);
-//
-//        return User.builder().username(user.get().getUsername())
-//                .roles(user.get().getRole())
-//                .password(user.get().getPassword())
-//                .build();
-//
-//        //return new org.springframework.security.core.userdetails.User(username, user.get().getPassword(), set);
-//    }
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         MyUser user = userRepository.findByUsername(username)

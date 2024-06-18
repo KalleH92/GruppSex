@@ -21,6 +21,35 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.HtmlUtils;
 
+/**
+ * ThymeleafController hanterar HTTP-förfrågningar och returnerar vyer för användarregistrering, uppdatering, borttagning och inloggning.
+ * Den använder Thymeleaf för att rendera HTML-sidor och hanterar olika användaroperationer.
+ *
+ * Viktiga komponenter i denna klass:
+ * - @Controller: Markerar denna klass som en Spring MVC-kontroller.
+ * - userRepository: En instans av UserRepository som används för databasoperationer.
+ * - encoder: En instans av PasswordEncoder som används för att kryptera lösenord.
+ * - userService: En instans av UserService som används för affärslogik relaterad till användarhantering.
+ * - logger: En instans av Logger för loggning av olika operationer.
+ *
+ * Metoder:
+ * - registreringsSida: Hanterar GET-förfrågningar för att visa registreringssidan.
+ * - submitForm: Hanterar POST-förfrågningar för att registrera en ny användare.
+ * - userList: Hanterar GET-förfrågningar för att visa en lista över registrerade användare.
+ * - singleUser: Hanterar GET-förfrågningar för att visa information om en enskild användare baserat på ID.
+ * - updateUser: Hanterar POST-förfrågningar för att uppdatera en användares lösenord.
+ * - login: Hanterar GET-förfrågningar för att visa inloggningssidan.
+ * - loggedInSuccessfully: Hanterar GET-förfrågningar för att visa inloggningsframgångssidan.
+ * - showError: Hanterar GET-förfrågningar för att visa felsidan.
+ * - deleteUserForm: Hanterar GET-förfrågningar för att visa sidan för borttagning av användare.
+ * - deleteUser: Hanterar POST-förfrågningar för att ta bort en användare.
+ * - updatePasswordForm: Hanterar GET-förfrågningar för att visa sidan för uppdatering av användares lösenord.
+ * - updatePassword: Hanterar POST-förfrågningar för att uppdatera en användares lösenord.
+ * - logout: Hanterar GET-förfrågningar för att visa utloggningssidan.
+ * - performLogout: Hanterar POST-förfrågningar för att utföra utloggning.
+ * - getLogoutSuccess: Hanterar GET-förfrågningar för att visa sidan för lyckad utloggning.
+ */
+
 @Controller
 public class ThymeleafController {
     private final UserRepository userRepository;
@@ -54,15 +83,6 @@ public class ThymeleafController {
         } else {
             logger.debug("Korrekt information baserad på DTOobjektets krav och lagt till användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(userDTO.getUsername())) + ".");
 
-            //MyUser user = new MyUser();
-
-            //user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername())); // added HTMLUtils
-            //user.setPassword(HtmlUtils.htmlEscape(encoder.encode(userDTO.getPassword())));
-            //user.setFirstName(userDTO.getFirstName());
-            //user.setLastName(userDTO.getLastName());
-            //user.setAge(userDTO.getAge());
-            //user.setRole("USER");
-            //userRepository.save(user);
 
             userService.registerUser(userDTO);
 
@@ -116,11 +136,6 @@ public class ThymeleafController {
         } else {
             logger.debug("Lösenordet kan uppdateras.");
 
-//        user.setAge(user.getAge());
-//        user.setRole(user.getRole());
-//        user.setUsername(user.getUsername());
-//        user.setFirstName(user.getFirstName());
-//        user.setLastName(user.getLastName());
 
         //userRepository.save(user);
 
@@ -143,28 +158,6 @@ public class ThymeleafController {
 
     }
 
-//    @GetMapping("/delete/{id}")
-//    public String deleteUser (@PathVariable("id") Long id, Model model) {
-//
-//        boolean user = userRepository.findById(id).isPresent();/*orElseThrow(() -> new IllegalArgumentException("Invalid user Id: " + id));*/
-//
-//
-//        if (user == true) {
-//
-//            MyUser user2 = userRepository.findById(id).get();
-//
-//            userRepository.delete(user2);
-//
-//            model.addAttribute("user", user2);
-//
-//            return "userDeleted";
-//
-//        } else {
-//
-//            model.addAttribute("id", id);
-//            return "userNotFound";
-//        }
-//    }
 
     @GetMapping("/login")
     public String login () {
@@ -327,21 +320,6 @@ public class ThymeleafController {
         logger.debug("Meddelar lyckad utloggnings-sida.");
         return "logoutSuccess";
     }
-//
-//    @PostMapping("/logout")
-//    public String performLogout(Authentication authentication, HttpServletRequest request, HttpServletResponse response) {
-//        // .. perform logout
-//        this.logoutHandler.logout(request,response,authentication);
-//        return "redirect:/logout";
-//    }
-//    @PostMapping("/login")
-//    public String loginUser(@ModelAttribute("user") @RequestBody UserDTO userDTO) {
-//        MyUser user = userService.loginUser(userDTO.getUsername(), userDTO.getPassword());
-//        if (user != null) {
-//            return "registrera";
-//        } else {
-//            return "list"; // Unauthorized
-//        }
-//    }
+
 
 }

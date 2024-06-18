@@ -7,6 +7,27 @@ import jakarta.validation.constraints.Size;
 import jdk.jfr.Name;
 import org.springframework.beans.factory.annotation.Value;
 
+/**
+ * UserDTO-klassen används för att överföra data för användarregistrering och uppdatering.
+ * Den innehåller valideringsregler för att säkerställa att data som tas emot är korrekt formaterad.
+ *
+ * Attribut:
+ * - id: Användarens unika identifierare.
+ * - username: Användarens e-postadress som måste vara giltig och inte tom.
+ * - password: Användarens lösenord som måste vara mellan 4 och 8 tecken långt.
+ * - firstName: Användarens förnamn som inte får vara tomt.
+ * - lastName: Användarens efternamn som inte får vara tomt.
+ * - age: Användarens ålder som inte får vara tom och måste vara minst 1.
+ * - role: Användarens roll i systemet.
+ *
+ * Valideringsregler:
+ * - @NotBlank: Säkerställer att fälten inte är tomma.
+ * - @Email: Säkerställer att användarnamnet är en giltig e-postadress.
+ * - @Size: Begränsar lösenordets längd till mellan 4 och 8 tecken.
+ * - @Min: Säkerställer att åldern är minst 1.
+ *
+ */
+
 public class UserDTO {
 
     private Long id;

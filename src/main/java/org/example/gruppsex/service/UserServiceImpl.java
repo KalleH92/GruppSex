@@ -18,6 +18,16 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * UserServiceImpl-klassen implementerar UserService-gränssnittet och tillhandahåller affärslogik för användarhantering.
+ * Den ansvarar för att logga in, registrera, hämta, uppdatera och ta bort användare.
+ *
+ * Viktiga komponenter i denna klass:
+ * - @Service: Markerar denna klass som en Spring-tjänstkomponent.
+ * - userRepository: En instans av UserRepository som används för att utföra databasoperationer.
+ * - passwordEncoder: En instans av PasswordEncoder som används för att kryptera lösenord.
+ */
+
 @Service
 public class UserServiceImpl implements UserService {
 
