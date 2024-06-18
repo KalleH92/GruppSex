@@ -25,12 +25,27 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
+/**
+ * SecurityConfig-klassen konfigurerar säkerhetsinställningar för applikationen.
+ * Den använder Spring Security för att hantera autentisering och auktorisering.
+ *
+ * Viktiga komponenter i denna klass:
+ * - @Configuration och @EnableWebSecurity: Markerar denna klass som en konfigurationsklass för säkerhet.
+ * - UserDetail: Används för att hämta användardetaljer.
+ *
+ * Beans:
+ * - webSecurityCustomizer: Ignorerar säkerhetsinställningar för vissa URL-mönster, såsom "/h2-console/**".
+ * - passwordEncoder: Kodar lösenord med BCryptPasswordEncoder.
+ * - securityFilterChain: Konfigurerar HTTP-säkerhet, inklusive vilka URL:er som ska tillåtas och vilka som kräver autentisering.
+ * - authenticationProvider: Konfigurerar en DaoAuthenticationProvider med en UserDetailsService och PasswordEncoder.
+ */
+
 @EnableWebSecurity
 @Configuration
 public class SecurityConfig {
 
-//    @Autowired
-//    private UserService userService;
+
 
     @Autowired
     private UserDetail userDetail;
@@ -45,22 +60,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    DaoAuthenticationProvider authenticationProvider () {
-//        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-//
-//        authProvider.setUserDetailsService( userService);
-//        authProvider.setPasswordEncoder(passwordEncoder());
-//
-//        return authProvider;
-//    }
 
-//    @Bean
-//    public AuthenticationManager authenticationManager (AuthenticationConfiguration authConfig) throws Exception {
-//
-//        return authConfig.getAuthenticationManager();
-//
-//    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -84,20 +84,7 @@ public class SecurityConfig {
 
         http.authenticationProvider(authenticationProvider()); // Seemingly optional
 
-//        http.logout((logout) -> logout.logoutSuccessUrl("/logout")
-//                .permitAll());
-                //.httpBasic(httpSec -> httpSec.authenticationEntryPoint(unauthorizedEntryPoint)).userDetailsService(userDetail);
 
-//                .formLogin(formLogin ->
-//                        formLogin.loginPage("/login").defaultSuccessUrl("/list",true).failureUrl("/login?error=true")
-//                                .permitAll());
-                //.httpBasic(Customizer.withDefaults());
-
-        //http.headers(headers -> headers.frameOptions(frameOption -> frameOption.sameOrigin()));
-
-        //http.authenticationProvider(authenticationProvider());
-
-        //http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
 
@@ -111,28 +98,6 @@ public class SecurityConfig {
         return authProvider;
     }
 
-//    @Bean
-//    UserDetailsService userDetailsService () {
-////        UserDetails user = User.builder()
-////                .username("admin")
-////                .password(passwordEncoder().encode("test"))
-////                .roles("ADMIN")
-////                .build();
-////
-////
-////        return new InMemoryUserDetailsManager(user);
-//        return userDetailsService();
-//    }
 
-//    @Bean
-//    public InMemoryUserDetailsManager inMemoryUserDetailsManager () {
-//
-//        UserDetails admin = User.builder().username("admin")
-//                .password("admin")
-//                .roles("ADMIN")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(admin);
-//    }
 
 }

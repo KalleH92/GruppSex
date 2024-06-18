@@ -1,5 +1,14 @@
 package org.example.gruppsex.service;
 
+/**
+ * MaskUtils är en hjälparklass som tillhandahåller verktygsmetoder för att maskera känsliga data.
+ *
+ * Metoder:
+ * - maskEmail: Maskerar en e-postadress genom att ersätta alla tecken i användarnamnet utom de första och sista med asterisker.
+ *   - @param email: E-postadressen som ska maskeras.
+ *   - @return: Den maskerade e-postadressen om den är tillräckligt lång för att maskeras korrekt; annars returneras den oförändrad.
+ */
+
 public class MaskUtils {
     public static String maskEmail(String email) {
         int atIndex = email.indexOf('@');
