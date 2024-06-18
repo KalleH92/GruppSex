@@ -47,7 +47,6 @@ public class ThymeleafController {
     @PostMapping("/register")
     public String submitForm (@Valid @ModelAttribute("user") UserDTO userDTO, BindingResult bindingResult, Model model) {
         logger.debug("Registrerad användares information.");
-        userDTO.getUsername();
 
         if (bindingResult.hasErrors()) {
             logger.debug("Fel information angiven baserad på DTOobjektets krav.");
