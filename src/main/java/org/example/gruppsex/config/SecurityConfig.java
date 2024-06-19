@@ -80,7 +80,8 @@ public class SecurityConfig {
                 .formLogin(formLogin -> formLogin.loginPage("/login")
                         .defaultSuccessUrl("/"/*"/loginsuccess"*/)
                         .failureUrl("/login?error=true")
-                        .permitAll());
+                        .permitAll())
+                .httpBasic(Customizer.withDefaults());
 
         http.authenticationProvider(authenticationProvider()); // Seemingly optional
 

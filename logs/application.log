@@ -1,0 +1,441 @@
+2024-06-18 11:31:48 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-18 11:31:48 [main] INFO  o.e.gruppsex.GruppSexApplication - Starting GruppSexApplication using Java 22.0.1 with PID 24236 (C:\Users\maksim.pouzakov\Desktop\GruppSex\target\classes started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-18 11:31:48 [main] INFO  o.e.gruppsex.GruppSexApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 11:31:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-18 11:31:50 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 104 ms. Found 1 JPA repository interface.
+2024-06-18 11:31:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-18 11:31:51 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-18 11:31:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 11:31:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-18 11:31:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 11:31:51 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2493 ms
+2024-06-18 11:31:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-18 11:31:51 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-18 11:31:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-18 11:31:51 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-18 11:31:52 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-18 11:31:52 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-18 11:31:52 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-18 11:31:52 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-18 11:31:52 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-18 11:31:53 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-18 11:31:53 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-18 11:31:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-18 11:31:54 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-18 11:31:54 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-18 11:31:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@40c92dfa, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16b713dd, org.springframework.security.web.context.SecurityContextHolderFilter@9120cb5, org.springframework.security.web.header.HeaderWriterFilter@7aad7df5, org.springframework.web.filter.CorsFilter@379df603, org.springframework.security.web.csrf.CsrfFilter@5f510929, org.springframework.security.web.authentication.logout.LogoutFilter@3b3dc752, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6768dc74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f93ec02, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e22dadb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58fb5b8f, org.springframework.security.web.access.ExceptionTranslationFilter@2446597e, org.springframework.security.web.access.intercept.AuthorizationFilter@1a598e30]
+2024-06-18 11:31:54 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 11:31:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]
+2024-06-18 11:31:54 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 11:31:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-18 11:31:54 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 11:31:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-18 11:31:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-18 11:31:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-18 11:31:55 [main] INFO  o.e.gruppsex.GruppSexApplication - Started GruppSexApplication in 7.1 seconds (process running for 8.19)
+2024-06-18 11:31:56 [http-nio-8080-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-18 11:31:56 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-18 11:31:56 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-18 16:34:41 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-18 16:34:41 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-18 16:34:41 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-18 16:34:42 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 36752 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-18 16:34:42 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-18 16:34:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-18 16:34:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2024-06-18 16:34:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-18 16:34:45 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-18 16:34:45 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-18 16:34:45 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-18 16:34:46 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-18 16:34:46 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-18 16:34:46 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-18 16:34:46 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-18 16:34:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-18 16:34:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-18 16:34:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-18 16:34:49 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-18 16:34:49 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-18 16:34:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62d4dac4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11efa76e, org.springframework.security.web.context.SecurityContextHolderFilter@54ee423f, org.springframework.security.web.header.HeaderWriterFilter@335cbcbd, org.springframework.web.filter.CorsFilter@35c83c56, org.springframework.security.web.csrf.CsrfFilter@173da924, org.springframework.security.web.authentication.logout.LogoutFilter@5f80b25a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f13720f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a457aa1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e32998, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1899c7ae, org.springframework.security.web.access.ExceptionTranslationFilter@392af2e0, org.springframework.security.web.access.intercept.AuthorizationFilter@4446e1d9]
+2024-06-18 16:34:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 16:34:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-18 16:34:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 16:34:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-18 16:34:49 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-18 16:34:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-18 16:34:50 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-18 16:34:50 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-18 16:34:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-18 16:34:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+2024-06-18 16:34:50 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 8.684 seconds (process running for 12.302)
+2024-06-18 16:34:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-18 16:34:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-18 16:34:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 10:24:52 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:24:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 10:24:52 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 10:25:09 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 10:25:10 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 10:25:10 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 10:25:10 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 24424 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 10:25:10 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 10:25:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 10:25:11 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2024-06-19 10:25:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 10:25:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 10:25:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 10:25:14 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 10:25:14 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 10:25:14 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 10:25:14 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 10:25:15 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 10:25:16 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 10:25:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:25:17 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 10:25:17 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 10:25:17 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 10:25:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62d4dac4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11efa76e, org.springframework.security.web.context.SecurityContextHolderFilter@54ee423f, org.springframework.security.web.header.HeaderWriterFilter@335cbcbd, org.springframework.web.filter.CorsFilter@35c83c56, org.springframework.security.web.csrf.CsrfFilter@173da924, org.springframework.security.web.authentication.logout.LogoutFilter@5f80b25a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f13720f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a457aa1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50e32998, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1899c7ae, org.springframework.security.web.access.ExceptionTranslationFilter@392af2e0, org.springframework.security.web.access.intercept.AuthorizationFilter@4446e1d9]
+2024-06-19 10:25:17 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 10:25:17 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 10:25:17 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 10:25:18 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 10:25:18 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 10:25:18 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 10:25:18 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-06-19 10:25:18 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.893 seconds (process running for 15.722)
+2024-06-19 10:25:19 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:25:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 10:25:19 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 10:25:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 10:25:32 [main] INFO  o.e.gruppsex.GruppSexApplication - Starting GruppSexApplication using Java 22.0.1 with PID 14244 (C:\Users\maksim.pouzakov\Desktop\GruppSex\target\classes started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 10:25:32 [main] INFO  o.e.gruppsex.GruppSexApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 10:25:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 10:25:33 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 1 JPA repository interface.
+2024-06-19 10:25:34 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 10:25:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 10:25:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 10:25:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-19 10:25:34 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 10:25:34 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1976 ms
+2024-06-19 10:25:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 10:25:34 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 10:25:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 10:25:34 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 10:25:35 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 10:25:35 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 10:25:35 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 10:25:35 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 10:25:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 10:25:36 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 10:25:36 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:25:37 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 10:25:37 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 10:25:37 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 10:25:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@51d41b97, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fd3c38b, org.springframework.security.web.context.SecurityContextHolderFilter@4e22dadb, org.springframework.security.web.header.HeaderWriterFilter@18419ab7, org.springframework.web.filter.CorsFilter@27260f9c, org.springframework.security.web.csrf.CsrfFilter@45f4c27c, org.springframework.security.web.authentication.logout.LogoutFilter@7c7a4986, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@379df603, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a916120, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@755fdfad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25031fd4, org.springframework.security.web.access.ExceptionTranslationFilter@69cc3370, org.springframework.security.web.access.intercept.AuthorizationFilter@16b713dd]
+2024-06-19 10:25:37 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]
+2024-06-19 10:25:37 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 10:25:37 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:25:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 10:25:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 10:25:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-19 10:25:38 [main] INFO  o.e.gruppsex.GruppSexApplication - Started GruppSexApplication in 6.075 seconds (process running for 6.869)
+2024-06-19 10:25:50 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 10:25:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 10:25:50 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 10:37:44 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:37:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 10:37:44 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 10:37:47 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 10:37:47 [main] INFO  o.e.gruppsex.GruppSexApplication - Starting GruppSexApplication using Java 22.0.1 with PID 31248 (C:\Users\maksim.pouzakov\Desktop\GruppSex\target\classes started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 10:37:47 [main] INFO  o.e.gruppsex.GruppSexApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 10:37:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 10:37:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interface.
+2024-06-19 10:37:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 10:37:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 10:37:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 10:37:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-19 10:37:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 10:37:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1932 ms
+2024-06-19 10:37:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 10:37:49 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 10:37:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 10:37:49 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 10:37:49 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 10:37:49 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 10:37:49 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 10:37:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 10:37:50 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 10:37:51 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 10:37:51 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 10:37:51 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 10:37:51 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 10:37:51 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 10:37:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35d4fecf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@22195d06, org.springframework.security.web.context.SecurityContextHolderFilter@3c98eaa9, org.springframework.security.web.header.HeaderWriterFilter@1a916120, org.springframework.web.filter.CorsFilter@1f591b2e, org.springframework.security.web.csrf.CsrfFilter@1a0e5c0c, org.springframework.security.web.authentication.logout.LogoutFilter@17b9c9ff, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25031fd4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1930e8ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69af938b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e205025, org.springframework.security.web.access.ExceptionTranslationFilter@4e22dadb, org.springframework.security.web.access.intercept.AuthorizationFilter@27260f9c]
+2024-06-19 10:37:52 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:37:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]
+2024-06-19 10:37:52 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:37:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 10:37:52 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 10:37:52 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 10:37:52 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 10:37:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-19 10:37:52 [main] INFO  o.e.gruppsex.GruppSexApplication - Started GruppSexApplication in 5.805 seconds (process running for 6.68)
+2024-06-19 10:38:04 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 10:38:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 10:38:04 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:01:55 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:01:56 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:01:56 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:01:57 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 35732 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:01:57 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:01:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:01:58 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 1 JPA repository interface.
+2024-06-19 11:02:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:02:01 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:02:01 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:02:01 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:02:01 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:02:01 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:02:01 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:02:02 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:02:03 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:02:03 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:04 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:02:04 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:02:04 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:02:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11703cc8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fc84468, org.springframework.security.web.context.SecurityContextHolderFilter@21b75073, org.springframework.security.web.header.HeaderWriterFilter@47bae235, org.springframework.web.filter.CorsFilter@2f6ede9, org.springframework.security.web.csrf.CsrfFilter@3f2bf80d, org.springframework.security.web.authentication.logout.LogoutFilter@62d4dac4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33602729, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@112f8f8f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ab11e76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69d6fe75, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4583a186, org.springframework.security.web.access.ExceptionTranslationFilter@3c1fd5aa, org.springframework.security.web.access.intercept.AuthorizationFilter@7a2b3cfd]
+2024-06-19 11:02:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:02:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:04 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:05 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:02:05 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:02:05 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:02:05 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:02:05 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 8.881 seconds (process running for 11.05)
+2024-06-19 11:02:05 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:02:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:02:32 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:02:32 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:02:32 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:02:33 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 29528 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:02:33 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:02:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:02:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2024-06-19 11:02:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:02:36 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:02:36 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:02:36 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:02:36 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:02:36 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:02:36 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:02:36 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:02:38 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:02:38 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:39 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:02:39 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:02:39 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:02:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f4d9c7f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dcb4f30, org.springframework.security.web.context.SecurityContextHolderFilter@1aee0f49, org.springframework.security.web.header.HeaderWriterFilter@5b476930, org.springframework.web.filter.CorsFilter@77f66138, org.springframework.security.web.csrf.CsrfFilter@5a457aa1, org.springframework.security.web.authentication.logout.LogoutFilter@33602729, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7843b65e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2f46bc25, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@365eaef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9e2b199, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7271320c, org.springframework.security.web.access.ExceptionTranslationFilter@5e2525fe, org.springframework.security.web.access.intercept.AuthorizationFilter@55854382]
+2024-06-19 11:02:39 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:02:39 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:39 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:39 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:40 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:02:40 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:02:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:02:40 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:02:40 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.585 seconds (process running for 9.517)
+2024-06-19 11:02:40 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:02:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:02:46 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:02:46 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:02:46 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:02:47 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 25680 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:02:47 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:02:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:02:48 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 68 ms. Found 1 JPA repository interface.
+2024-06-19 11:02:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:02:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:02:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:02:50 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:02:50 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:02:50 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:02:50 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:02:51 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:02:52 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:02:52 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:52 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:02:52 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:02:52 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:02:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@9886ec3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6ff05f85, org.springframework.security.web.context.SecurityContextHolderFilter@5834fd3f, org.springframework.security.web.header.HeaderWriterFilter@9e2b199, org.springframework.web.filter.CorsFilter@15ff247b, org.springframework.security.web.csrf.CsrfFilter@2643c33f, org.springframework.security.web.authentication.logout.LogoutFilter@47a72c32, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@77d0a492, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@36299b83, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f13720f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62d4dac4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71979130, org.springframework.security.web.access.ExceptionTranslationFilter@365eaef, org.springframework.security.web.access.intercept.AuthorizationFilter@6f404bc6]
+2024-06-19 11:02:53 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:02:53 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:53 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:02:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:02:53 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:02:53 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:02:53 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:02:53 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:02:53 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.236 seconds (process running for 9.121)
+2024-06-19 11:02:54 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:02:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:02:54 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:04:07 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:04:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:04:07 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:04:11 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:04:11 [main] INFO  o.e.gruppsex.GruppSexApplication - Starting GruppSexApplication using Java 22.0.1 with PID 10856 (C:\Users\maksim.pouzakov\Desktop\GruppSex\target\classes started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:04:11 [main] INFO  o.e.gruppsex.GruppSexApplication - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:04:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:04:12 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interface.
+2024-06-19 11:04:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-19 11:04:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-19 11:04:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 11:04:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-19 11:04:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 11:04:13 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1853 ms
+2024-06-19 11:04:13 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:04:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:04:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:04:14 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:04:14 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:04:14 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:04:14 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:04:14 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:04:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:04:15 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:04:15 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:04:16 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:04:16 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:04:16 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:04:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c1ef806, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@969c2f9, org.springframework.security.web.context.SecurityContextHolderFilter@e38d655, org.springframework.security.web.header.HeaderWriterFilter@7860a014, org.springframework.web.filter.CorsFilter@7bbc11ed, org.springframework.security.web.csrf.CsrfFilter@22195d06, org.springframework.security.web.authentication.logout.LogoutFilter@5cb64b9c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e8f97dd, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3e8995cc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f943847, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47596e9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d741200, org.springframework.security.web.access.ExceptionTranslationFilter@21ebf9be, org.springframework.security.web.access.intercept.AuthorizationFilter@44b5b54]
+2024-06-19 11:04:16 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:04:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/h2-console/**'], mvc = Mvc [pattern='/h2-console/**']]
+2024-06-19 11:04:16 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:04:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 11:04:16 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:04:16 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure DispatcherServletDelegating [ant = Ant [pattern='/update/**'], mvc = Mvc [pattern='/update/**']]
+2024-06-19 11:04:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-19 11:04:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2024-06-19 11:04:17 [main] INFO  o.e.gruppsex.GruppSexApplication - Started GruppSexApplication in 5.863 seconds (process running for 6.654)
+2024-06-19 11:04:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-19 11:04:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-19 11:04:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:05:42 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:05:43 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:05:43 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:05:43 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 23740 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:05:43 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:05:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:05:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2024-06-19 11:05:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:05:47 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:05:47 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:05:47 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:05:47 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:05:47 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:05:47 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:05:47 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:05:48 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:05:48 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:05:49 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:05:49 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:05:49 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:05:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@52e44f71, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e1b1d22, org.springframework.security.web.context.SecurityContextHolderFilter@7a458c73, org.springframework.security.web.header.HeaderWriterFilter@581cb879, org.springframework.web.filter.CorsFilter@653c0c9c, org.springframework.security.web.csrf.CsrfFilter@9e2b199, org.springframework.security.web.authentication.logout.LogoutFilter@9886ec3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2a4a95c4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@29ec5005, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@112f8f8f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11703cc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5276330a, org.springframework.security.web.access.ExceptionTranslationFilter@3638120f, org.springframework.security.web.access.intercept.AuthorizationFilter@513fb873]
+2024-06-19 11:05:50 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:05:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:05:50 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:05:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:05:50 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:05:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:05:50 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:05:50 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:05:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:05:50 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-06-19 11:05:50 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.665 seconds (process running for 9.389)
+2024-06-19 11:05:51 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:05:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:05:51 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:07:04 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:07:04 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:07:04 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:07:05 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 17608 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:07:05 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:07:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:07:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 59 ms. Found 1 JPA repository interface.
+2024-06-19 11:07:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:07:08 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:07:08 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:07:08 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:07:08 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:07:08 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:07:08 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:07:08 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:07:09 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:07:10 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:07:10 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:07:10 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:07:10 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:07:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@541d8a9e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51c0346d, org.springframework.security.web.context.SecurityContextHolderFilter@6fc84468, org.springframework.security.web.header.HeaderWriterFilter@112f8f8f, org.springframework.web.filter.CorsFilter@32cda33c, org.springframework.security.web.csrf.CsrfFilter@3f13720f, org.springframework.security.web.authentication.logout.LogoutFilter@56c26b21, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d5ec2ed, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5276330a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4583a186, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7843b65e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5bb24266, org.springframework.security.web.access.ExceptionTranslationFilter@7a458c73, org.springframework.security.web.access.intercept.AuthorizationFilter@4d1a763c]
+2024-06-19 11:07:11 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:07:11 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:07:11 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:11 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:07:11 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:07:11 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:07:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:07:11 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 2 ms
+2024-06-19 11:07:11 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.301 seconds (process running for 9.207)
+2024-06-19 11:07:12 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:07:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:07:12 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-19 11:07:19 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.gruppsex.GruppSexApplicationTests]: GruppSexApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-06-19 11:07:19 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.gruppsex.GruppSexApplication for test class org.example.gruppsex.GruppSexApplicationTests
+2024-06-19 11:07:20 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2024-06-19 11:07:20 [main] INFO  o.e.g.GruppSexApplicationTests - Starting GruppSexApplicationTests using Java 22.0.1 with PID 19948 (started by maksim.pouzakov in C:\Users\maksim.pouzakov\Desktop\GruppSex)
+2024-06-19 11:07:20 [main] INFO  o.e.g.GruppSexApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2024-06-19 11:07:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-19 11:07:21 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interface.
+2024-06-19 11:07:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-19 11:07:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:test user=SA
+2024-06-19 11:07:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-19 11:07:23 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-19 11:07:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-19 11:07:23 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-19 11:07:24 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-19 11:07:24 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-19 11:07:25 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-19 11:07:25 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:07:25 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-19 11:07:26 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-06-19 11:07:26 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-06-19 11:07:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5276330a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@221961f2, org.springframework.security.web.context.SecurityContextHolderFilter@4700064f, org.springframework.security.web.header.HeaderWriterFilter@7a458c73, org.springframework.web.filter.CorsFilter@541d8a9e, org.springframework.security.web.csrf.CsrfFilter@5834fd3f, org.springframework.security.web.authentication.logout.LogoutFilter@71979130, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3380313d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2e1b1d22, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fc84468, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4583a186, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51c0346d, org.springframework.security.web.access.ExceptionTranslationFilter@6a77953c, org.springframework.security.web.access.intercept.AuthorizationFilter@1f50fe84]
+2024-06-19 11:07:26 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/h2-console/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/h2-console/**']
+2024-06-19 11:07:26 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:07:26 [main] WARN  o.s.s.c.a.web.builders.WebSecurity - You are asking Spring Security to ignore Ant [pattern='/update/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-06-19 11:07:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will not secure Ant [pattern='/update/**']
+2024-06-19 11:07:26 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:test'
+2024-06-19 11:07:26 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2024-06-19 11:07:26 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2024-06-19 11:07:26 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2024-06-19 11:07:26 [main] INFO  o.e.g.GruppSexApplicationTests - Started GruppSexApplicationTests in 7.16 seconds (process running for 8.991)
+2024-06-19 11:07:27 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-19 11:07:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-19 11:07:27 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

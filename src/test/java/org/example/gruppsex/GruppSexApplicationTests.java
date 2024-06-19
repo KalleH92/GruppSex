@@ -33,7 +33,7 @@ class GruppSexApplicationTests {
     @Test
     public void testFirstPageWithoutAuthentication () throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:8080/"))
-                .andExpect(status().is(302)); // 302 because unauthenticated will redirect to a different url
+                .andExpect(status().isUnauthorized()); //
     }
 
     @Test
@@ -41,7 +41,7 @@ class GruppSexApplicationTests {
     public void testFirstPageWithAuthentication () throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders.get("http://localhost:8080/")
                         //.with(httpBasic("admin@admin.com", "pass"))
-                ).andExpect(status().is(200));
+                ).andExpect(status().isOk());
     }
 
     @Test
