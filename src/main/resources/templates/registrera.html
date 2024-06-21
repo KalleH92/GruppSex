@@ -43,7 +43,9 @@
         <label>Full email: </label>
         <input type="text" th:field="*{username}" /><br/>
         <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Full email error</span>
-
+        <div th:if="${error}">
+            <p th:text="${error}" style="color: red;"></p>
+        </div>
         <br/>
 
         <br/>
@@ -85,6 +87,7 @@
 
 
     </form>
+
     <br/>
     <a th:href="@{'/'}"><button>Till första sida</button></a>
     <br/>

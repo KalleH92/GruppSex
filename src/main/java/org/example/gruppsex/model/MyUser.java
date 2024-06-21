@@ -14,6 +14,18 @@ import java.io.Serializable;
 //@Accessors(chain = true)
 //@Getter
 //@Setter
+
+/**
+ * MyUser-klassen representerar en användare i systemet.
+ * Denna klass är en entitet som mappas till tabellen "UserData" i databasen.
+ * Den innehåller information om användaren såsom användarnamn, lösenord, förnamn, efternamn, ålder och roll.
+ *
+ * Viktiga komponenter i denna klass:
+ * - @Entity: Markerar denna klass som en JPA-entitet.
+ * - @Id och @GeneratedValue: Anger att 'id' är primärnyckeln och att dess värde genereras automatiskt.
+ * - Serializable: Gör det möjligt att serialisera objekt av denna klass.
+ */
+
 @Entity(name="UserData")
 public class MyUser implements Serializable {
 

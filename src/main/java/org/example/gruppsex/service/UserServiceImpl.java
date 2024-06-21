@@ -6,6 +6,7 @@ import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,6 +18,16 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+
+/**
+ * UserServiceImpl-klassen implementerar UserService-gränssnittet och tillhandahåller affärslogik för användarhantering.
+ * Den ansvarar för att logga in, registrera, hämta, uppdatera och ta bort användare.
+ *
+ * Viktiga komponenter i denna klass:
+ * - @Service: Markerar denna klass som en Spring-tjänstkomponent.
+ * - userRepository: En instans av UserRepository som används för att utföra databasoperationer.
+ * - passwordEncoder: En instans av PasswordEncoder som används för att kryptera lösenord.
+ */
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -43,16 +54,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public MyUser registerUser(UserDTO userDTO) {
-        MyUser user = new MyUser();
-        user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername()));
-        user.setPassword(passwordEncoder.encode(HtmlUtils.htmlEscape(userDTO.getPassword())));
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
-        user.setAge(userDTO.getAge());
-        user.setRole("USER");
-        System.out.println("user registered");
-        return userRepository.save(user);
+    public MyUser registerUser(UserDTO userDTO) throws UserAlreadyExistsException {
+        try {
+            MyUser user = new MyUser();
+            user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername()));
+            user.setPassword(passwordEncoder.encode(HtmlUtils.htmlEscape(userDTO.getPassword())));
+            user.setFirstName(userDTO.getFirstName());
+            user.setLastName(userDTO.getLastName());
+            user.setAge(userDTO.getAge());
+            user.setRole("USER");
+            System.out.println("user registered");
+            return userRepository.save(user);
+        } catch (DataIntegrityViolationException e) {
+            throw new UserAlreadyExistsException("Användarnamet upptaget");
+        }
+
     }
 
     @Override
