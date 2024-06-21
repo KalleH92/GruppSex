@@ -1,5 +1,6 @@
 package org.example.gruppsex.model;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -42,6 +43,7 @@ public class UserDTO {
 
     @NotBlank (message = "Ange en epost adress")
     @Email(message = "Ange giltig epost adress")
+    @Column(unique = true)
     private String username;
 
     @NotBlank (message = "")

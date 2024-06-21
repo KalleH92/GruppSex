@@ -239,7 +239,7 @@ public class ThymeleafController {
                     System.out.println("user.getRole: " + user1.getRole());
 
 
-                        userService.deleteUser(user1.getId());
+                    userService.deleteUser(user1.getId());
 
 
                     //userRepository.delete(user1);
@@ -254,7 +254,9 @@ public class ThymeleafController {
                 }
 
             } catch (UsernameNotFoundException e) {
-                logger.error("Ingen sån användare :(", e);
+                logger.error("Ingen sån användare :( ", e);
+                logger.error("Ingen sån användare :( getStackTrace ", e.getStackTrace());
+                logger.error("Ingen sån användare :( fillInStackTrace", e.fillInStackTrace());
             }
                 logger.warn("Användaren " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(user.getUsername())) + " hittades inte vid borttagning.");
                 model.addAttribute("id", HtmlUtils.htmlEscape(HtmlUtils.htmlEscape(user.getUsername())));

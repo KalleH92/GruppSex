@@ -44,7 +44,7 @@
         <input type="text" th:field="*{username}" /><br/>
         <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Full email error</span>
         <div th:if="${error}">
-            <p th:text="${error}" style="color: red;"></p>
+            <p th:text="${error}" style="color: blue;"></p>
         </div>
         <br/>
 
