@@ -6,6 +6,7 @@ import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -53,16 +54,21 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public MyUser registerUser(UserDTO userDTO) {
-        MyUser user = new MyUser();
-        user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername()));
-        user.setPassword(passwordEncoder.encode(HtmlUtils.htmlEscape(userDTO.getPassword())));
-        user.setFirstName(userDTO.getFirstName());
-        user.setLastName(userDTO.getLastName());
-        user.setAge(userDTO.getAge());
-        user.setRole("USER");
-        System.out.println("user registered");
-        return userRepository.save(user);
+    public MyUser registerUser(UserDTO userDTO) throws UserAlreadyExistsException {
+        try {
+            MyUser user = new MyUser();
+            user.setUsername(HtmlUtils.htmlEscape(userDTO.getUsername()));
+            user.setPassword(passwordEncoder.encode(HtmlUtils.htmlEscape(userDTO.getPassword())));
+            user.setFirstName(userDTO.getFirstName());
+            user.setLastName(userDTO.getLastName());
+            user.setAge(userDTO.getAge());
+            user.setRole("USER");
+            System.out.println("user registered");
+            return userRepository.save(user);
+        } catch (DataIntegrityViolationException e) {
+            throw new UserAlreadyExistsException("Användarnamet upptaget");
+        }
+
     }
 
     @Override

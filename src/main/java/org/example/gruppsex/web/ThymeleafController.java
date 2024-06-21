@@ -7,6 +7,7 @@ import org.example.gruppsex.model.UpdateUserDTO;
 import org.example.gruppsex.model.UserDTO;
 import org.example.gruppsex.repository.UserRepository;
 import org.example.gruppsex.service.MaskUtils;
+import org.example.gruppsex.service.UserAlreadyExistsException;
 import org.example.gruppsex.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,13 +84,18 @@ public class ThymeleafController {
         } else {
             logger.debug("Korrekt information baserad på DTOobjektets krav och lagt till användare " + MaskUtils.maskEmail(HtmlUtils.htmlEscape(userDTO.getUsername())) + ".");
 
+            try {
+                userService.registerUser(userDTO);
 
-            userService.registerUser(userDTO);
+                model.addAttribute("user", userDTO);
+                //System.out.println();
+                //return "registrera";
+                return "regsuc";
+            } catch (UserAlreadyExistsException e) {
 
-            model.addAttribute("user", userDTO);
-            //System.out.println();
-            //return "registrera";
-            return "regsuc";
+                model.addAttribute("error", e.getMessage());
+                return "registrera";
+            }
 
         }
     }

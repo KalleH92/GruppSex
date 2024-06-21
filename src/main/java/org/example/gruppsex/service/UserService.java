@@ -25,7 +25,7 @@ import java.util.Optional;
 
 public interface UserService {
     MyUser loginUser(String username, String rawPassword);
-    MyUser registerUser(UserDTO userDTO);
+    MyUser registerUser(UserDTO userDTO) throws UserAlreadyExistsException;
     List<MyUser> getAllUsers();
     Optional<MyUser> getUserById(Long id);
     Optional<MyUser> updateUser(Long id, UpdateUserDTO userDTO);

@@ -3,6 +3,7 @@ package org.example.gruppsex.controller;
 
 import org.example.gruppsex.model.MyUser;
 import org.example.gruppsex.model.UserDTO;
+import org.example.gruppsex.service.UserAlreadyExistsException;
 import org.example.gruppsex.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -44,7 +45,7 @@ public class UserController {
 
 
     @PostMapping
-    public ResponseEntity<MyUser> createUser(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<MyUser> createUser(@RequestBody UserDTO userDTO) throws UserAlreadyExistsException {
         MyUser user = userService.registerUser(userDTO);
         return ResponseEntity.status(201).body(user);
     }
